@@ -1,0 +1,26 @@
+PODS:
+  - JSONModel (1.7.0)
+  - KSYMediaPlayer_iOS/KSYMediaPlayer_live (2.9.0)
+  - Masonry (1.1.0)
+  - SDWebImage (4.1.2):
+    - SDWebImage/Core (= 4.1.2)
+  - SDWebImage/Core (4.1.2)
+  - Toast (3.1.0)
+
+DEPENDENCIES:
+  - JSONModel
+  - KSYMediaPlayer_iOS/KSYMediaPlayer_live
+  - Masonry
+  - SDWebImage
+  - Toast
+
+SPEC CHECKSUMS:
+  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
+  KSYMediaPlayer_iOS: 1eab7ed78669375dfecb283c0521f3d62abb8120
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
+  Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
+
+PODFILE CHECKSUM: 108459044ee7f2e3eac8d2c334e76379d692cc51
+
+COCOAPODS: 1.2.1

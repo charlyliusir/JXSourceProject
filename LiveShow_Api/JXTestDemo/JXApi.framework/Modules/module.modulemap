@@ -1,0 +1,6 @@
+framework module JXApi {
+  umbrella header "JXApi.h"
+
+  export *
+  module * { export * }
+}

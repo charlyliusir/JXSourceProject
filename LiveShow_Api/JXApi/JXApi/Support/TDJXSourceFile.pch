@@ -1,0 +1,46 @@
+//
+//  TDJXSourceFile.pch
+//  JXSourceFile
+//
+//  Created by tidemedia on 2017/10/20.
+//  Copyright © 2017年 liucharly. All rights reserved.
+//
+
+#ifndef TDJXSourceFile_pch
+#define TDJXSourceFile_pch
+
+#import "TDCommon.h"
+#import "TDCommonClient.h"
+#import "UIColor+TDHex.h"
+#import "NSString+TDTextSize.h"
+#import <Masonry/Masonry.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <MJRefresh/MJRefresh.h>
+
+
+#pragma mark - 多语言
+#define TDLocalizedString(key) \
+        TDLocalizedStringWithComment(key, @"")
+#define TDLocalizedStringWithComment(key, comment) \
+        NSLocalizedStringFromTable((key), @"language", (comment))
+
+#pragma mark - 打印
+#ifdef DEBUG
+#define NSLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#define NSLog(...)
+#endif
+
+#pragma mark - 颜色
+#define TDRGB(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0f]
+#define TDHexStringColor(hex) [UIColor colorWithHexString:hex]
+#define TDColorWithHexString(hex, alpha) [UIColor colorWithHexString:hex alpha:alpha]
+#define TDHexColor(hex) [UIColor colorWithHex:hex]
+#define TDColorWithHex(hex, alpha) [UIColor colorWithHex:hex alpha:alpha]
+
+#pragma mark - 字体大小
+#define TDFontSize(size) [UIFont systemFontOfSize:size]
+#define TDFontSizeWithName(name, size) [UIFont fontWithName:name size:size]
+
+
+#endif /* TDJXSourceFile_pch */

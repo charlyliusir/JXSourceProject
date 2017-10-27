@@ -1,0 +1,20 @@
+/* 
+  language.strings
+  JXSourceFile
+
+  Created by tidemedia on 2017/10/20.
+  Copyright © 2017年 liucharly. All rights reserved.
+*/
+/**
+ *  网络请求模块
+ *  网络请求模块
+ */
+"td_http_net_error" = "网络请求失败!";
+
+/**
+ *  直播详情模块
+ *  直播详情模块
+ */
+"live_info_tapbar_item_dynamic" = "动态";
+"live_info_tapbar_item_chat"    = "聊天室";
+"live_info_tapbar_item_intro"   = "介绍";

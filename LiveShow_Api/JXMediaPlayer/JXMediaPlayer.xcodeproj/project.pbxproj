@@ -1,0 +1,698 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5407C01A1FA0627A0016D1A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5407C0191FA0627A0016D1A9 /* AppDelegate.m */; };
+		5407C01D1FA0627A0016D1A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5407C01C1FA0627A0016D1A9 /* ViewController.m */; };
+		5407C0201FA0627A0016D1A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5407C01E1FA0627A0016D1A9 /* Main.storyboard */; };
+		5407C0221FA0627A0016D1A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5407C0211FA0627A0016D1A9 /* Assets.xcassets */; };
+		5407C0251FA0627A0016D1A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5407C0231FA0627A0016D1A9 /* LaunchScreen.storyboard */; };
+		5407C0281FA0627A0016D1A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5407C0271FA0627A0016D1A9 /* main.m */; };
+		5407C0321FA0627A0016D1A9 /* JXMediaPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5407C0311FA0627A0016D1A9 /* JXMediaPlayerTests.m */; };
+		5407C03D1FA0627A0016D1A9 /* JXMediaPlayerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5407C03C1FA0627A0016D1A9 /* JXMediaPlayerUITests.m */; };
+		5407C0501FA069740016D1A9 /* TDLiveControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5407C04F1FA069740016D1A9 /* TDLiveControlView.m */; };
+		5407C0551FA069AB0016D1A9 /* TDLivePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5407C0541FA069AB0016D1A9 /* TDLivePlayerViewController.m */; };
+		5407C0581FA071410016D1A9 /* TDPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5407C0571FA071410016D1A9 /* TDPlayerController.m */; };
+		5407C05B1FA0775E0016D1A9 /* TDPlayerSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 5407C05A1FA0775E0016D1A9 /* TDPlayerSetting.m */; };
+		5407C05E1FA0985A0016D1A9 /* TDPlayerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5407C05D1FA0985A0016D1A9 /* TDPlayerViewModel.m */; };
+		D45FC66151FB93F0787EA30F /* libPods-JXMediaPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1183F6462B1F233D2DFBC9F /* libPods-JXMediaPlayer.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5407C02E1FA0627A0016D1A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5407C00D1FA0627A0016D1A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5407C0141FA0627A0016D1A9;
+			remoteInfo = JXMediaPlayer;
+		};
+		5407C0391FA0627A0016D1A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5407C00D1FA0627A0016D1A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5407C0141FA0627A0016D1A9;
+			remoteInfo = JXMediaPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5407C0151FA0627A0016D1A9 /* JXMediaPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXMediaPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5407C0181FA0627A0016D1A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5407C0191FA0627A0016D1A9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5407C01B1FA0627A0016D1A9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5407C01C1FA0627A0016D1A9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5407C01F1FA0627A0016D1A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5407C0211FA0627A0016D1A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5407C0241FA0627A0016D1A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5407C0261FA0627A0016D1A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5407C0271FA0627A0016D1A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5407C02D1FA0627A0016D1A9 /* JXMediaPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JXMediaPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5407C0311FA0627A0016D1A9 /* JXMediaPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXMediaPlayerTests.m; sourceTree = "<group>"; };
+		5407C0331FA0627A0016D1A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5407C0381FA0627A0016D1A9 /* JXMediaPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JXMediaPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5407C03C1FA0627A0016D1A9 /* JXMediaPlayerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXMediaPlayerUITests.m; sourceTree = "<group>"; };
+		5407C03E1FA0627A0016D1A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5407C04E1FA069740016D1A9 /* TDLiveControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDLiveControlView.h; sourceTree = "<group>"; };
+		5407C04F1FA069740016D1A9 /* TDLiveControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDLiveControlView.m; sourceTree = "<group>"; };
+		5407C0531FA069AB0016D1A9 /* TDLivePlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDLivePlayerViewController.h; sourceTree = "<group>"; };
+		5407C0541FA069AB0016D1A9 /* TDLivePlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDLivePlayerViewController.m; sourceTree = "<group>"; };
+		5407C0561FA071410016D1A9 /* TDPlayerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDPlayerController.h; sourceTree = "<group>"; };
+		5407C0571FA071410016D1A9 /* TDPlayerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDPlayerController.m; sourceTree = "<group>"; };
+		5407C0591FA0775E0016D1A9 /* TDPlayerSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDPlayerSetting.h; sourceTree = "<group>"; };
+		5407C05A1FA0775E0016D1A9 /* TDPlayerSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDPlayerSetting.m; sourceTree = "<group>"; };
+		5407C05C1FA0985A0016D1A9 /* TDPlayerViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDPlayerViewModel.h; sourceTree = "<group>"; };
+		5407C05D1FA0985A0016D1A9 /* TDPlayerViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDPlayerViewModel.m; sourceTree = "<group>"; };
+		BA968334AE8FC03B1A435C35 /* Pods-JXMediaPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXMediaPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXMediaPlayer/Pods-JXMediaPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		BCB868913403E4E3DB54EB72 /* Pods-JXMediaPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXMediaPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXMediaPlayer/Pods-JXMediaPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		E1183F6462B1F233D2DFBC9F /* libPods-JXMediaPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXMediaPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5407C0121FA0627A0016D1A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D45FC66151FB93F0787EA30F /* libPods-JXMediaPlayer.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5407C02A1FA0627A0016D1A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5407C0351FA0627A0016D1A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5407C00C1FA0627A0016D1A9 = {
+			isa = PBXGroup;
+			children = (
+				5407C0171FA0627A0016D1A9 /* JXMediaPlayer */,
+				5407C0301FA0627A0016D1A9 /* JXMediaPlayerTests */,
+				5407C03B1FA0627A0016D1A9 /* JXMediaPlayerUITests */,
+				5407C0161FA0627A0016D1A9 /* Products */,
+				8A6312F51014C074EEE33688 /* Pods */,
+				BE06FD7F89AC49AB50006D65 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5407C0161FA0627A0016D1A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5407C0151FA0627A0016D1A9 /* JXMediaPlayer.app */,
+				5407C02D1FA0627A0016D1A9 /* JXMediaPlayerTests.xctest */,
+				5407C0381FA0627A0016D1A9 /* JXMediaPlayerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5407C0171FA0627A0016D1A9 /* JXMediaPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				5407C04A1FA062B20016D1A9 /* JXMediaPlayer */,
+				5407C0181FA0627A0016D1A9 /* AppDelegate.h */,
+				5407C0191FA0627A0016D1A9 /* AppDelegate.m */,
+				5407C01B1FA0627A0016D1A9 /* ViewController.h */,
+				5407C01C1FA0627A0016D1A9 /* ViewController.m */,
+				5407C01E1FA0627A0016D1A9 /* Main.storyboard */,
+				5407C0211FA0627A0016D1A9 /* Assets.xcassets */,
+				5407C0231FA0627A0016D1A9 /* LaunchScreen.storyboard */,
+				5407C0261FA0627A0016D1A9 /* Info.plist */,
+				5407C0271FA0627A0016D1A9 /* main.m */,
+			);
+			path = JXMediaPlayer;
+			sourceTree = "<group>";
+		};
+		5407C0301FA0627A0016D1A9 /* JXMediaPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				5407C0311FA0627A0016D1A9 /* JXMediaPlayerTests.m */,
+				5407C0331FA0627A0016D1A9 /* Info.plist */,
+			);
+			path = JXMediaPlayerTests;
+			sourceTree = "<group>";
+		};
+		5407C03B1FA0627A0016D1A9 /* JXMediaPlayerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5407C03C1FA0627A0016D1A9 /* JXMediaPlayerUITests.m */,
+				5407C03E1FA0627A0016D1A9 /* Info.plist */,
+			);
+			path = JXMediaPlayerUITests;
+			sourceTree = "<group>";
+		};
+		5407C04A1FA062B20016D1A9 /* JXMediaPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				5407C04B1FA062B20016D1A9 /* Controller */,
+				5407C04C1FA062B20016D1A9 /* Utils */,
+				5407C04D1FA062B20016D1A9 /* View */,
+			);
+			path = JXMediaPlayer;
+			sourceTree = "<group>";
+		};
+		5407C04B1FA062B20016D1A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5407C0561FA071410016D1A9 /* TDPlayerController.h */,
+				5407C0571FA071410016D1A9 /* TDPlayerController.m */,
+				5407C0531FA069AB0016D1A9 /* TDLivePlayerViewController.h */,
+				5407C0541FA069AB0016D1A9 /* TDLivePlayerViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5407C04C1FA062B20016D1A9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5407C0591FA0775E0016D1A9 /* TDPlayerSetting.h */,
+				5407C05A1FA0775E0016D1A9 /* TDPlayerSetting.m */,
+				5407C05C1FA0985A0016D1A9 /* TDPlayerViewModel.h */,
+				5407C05D1FA0985A0016D1A9 /* TDPlayerViewModel.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5407C04D1FA062B20016D1A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5407C04E1FA069740016D1A9 /* TDLiveControlView.h */,
+				5407C04F1FA069740016D1A9 /* TDLiveControlView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8A6312F51014C074EEE33688 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BCB868913403E4E3DB54EB72 /* Pods-JXMediaPlayer.debug.xcconfig */,
+				BA968334AE8FC03B1A435C35 /* Pods-JXMediaPlayer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BE06FD7F89AC49AB50006D65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1183F6462B1F233D2DFBC9F /* libPods-JXMediaPlayer.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5407C0141FA0627A0016D1A9 /* JXMediaPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5407C0411FA0627A0016D1A9 /* Build configuration list for PBXNativeTarget "JXMediaPlayer" */;
+			buildPhases = (
+				5B507F8BD114C775419D834E /* [CP] Check Pods Manifest.lock */,
+				5407C0111FA0627A0016D1A9 /* Sources */,
+				5407C0121FA0627A0016D1A9 /* Frameworks */,
+				5407C0131FA0627A0016D1A9 /* Resources */,
+				D59DC64275A97850B1C55FFE /* [CP] Embed Pods Frameworks */,
+				7DB78036AF819B4FF8A721BC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JXMediaPlayer;
+			productName = JXMediaPlayer;
+			productReference = 5407C0151FA0627A0016D1A9 /* JXMediaPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5407C02C1FA0627A0016D1A9 /* JXMediaPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5407C0441FA0627A0016D1A9 /* Build configuration list for PBXNativeTarget "JXMediaPlayerTests" */;
+			buildPhases = (
+				5407C0291FA0627A0016D1A9 /* Sources */,
+				5407C02A1FA0627A0016D1A9 /* Frameworks */,
+				5407C02B1FA0627A0016D1A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5407C02F1FA0627A0016D1A9 /* PBXTargetDependency */,
+			);
+			name = JXMediaPlayerTests;
+			productName = JXMediaPlayerTests;
+			productReference = 5407C02D1FA0627A0016D1A9 /* JXMediaPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5407C0371FA0627A0016D1A9 /* JXMediaPlayerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5407C0471FA0627A0016D1A9 /* Build configuration list for PBXNativeTarget "JXMediaPlayerUITests" */;
+			buildPhases = (
+				5407C0341FA0627A0016D1A9 /* Sources */,
+				5407C0351FA0627A0016D1A9 /* Frameworks */,
+				5407C0361FA0627A0016D1A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5407C03A1FA0627A0016D1A9 /* PBXTargetDependency */,
+			);
+			name = JXMediaPlayerUITests;
+			productName = JXMediaPlayerUITests;
+			productReference = 5407C0381FA0627A0016D1A9 /* JXMediaPlayerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5407C00D1FA0627A0016D1A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = liucharly;
+				TargetAttributes = {
+					5407C0141FA0627A0016D1A9 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					5407C02C1FA0627A0016D1A9 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5407C0141FA0627A0016D1A9;
+					};
+					5407C0371FA0627A0016D1A9 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5407C0141FA0627A0016D1A9;
+					};
+				};
+			};
+			buildConfigurationList = 5407C0101FA0627A0016D1A9 /* Build configuration list for PBXProject "JXMediaPlayer" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5407C00C1FA0627A0016D1A9;
+			productRefGroup = 5407C0161FA0627A0016D1A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5407C0141FA0627A0016D1A9 /* JXMediaPlayer */,
+				5407C02C1FA0627A0016D1A9 /* JXMediaPlayerTests */,
+				5407C0371FA0627A0016D1A9 /* JXMediaPlayerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5407C0131FA0627A0016D1A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5407C0251FA0627A0016D1A9 /* LaunchScreen.storyboard in Resources */,
+				5407C0221FA0627A0016D1A9 /* Assets.xcassets in Resources */,
+				5407C0201FA0627A0016D1A9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5407C02B1FA0627A0016D1A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5407C0361FA0627A0016D1A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5B507F8BD114C775419D834E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7DB78036AF819B4FF8A721BC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JXMediaPlayer/Pods-JXMediaPlayer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D59DC64275A97850B1C55FFE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JXMediaPlayer/Pods-JXMediaPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5407C0111FA0627A0016D1A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5407C0551FA069AB0016D1A9 /* TDLivePlayerViewController.m in Sources */,
+				5407C05B1FA0775E0016D1A9 /* TDPlayerSetting.m in Sources */,
+				5407C01D1FA0627A0016D1A9 /* ViewController.m in Sources */,
+				5407C0281FA0627A0016D1A9 /* main.m in Sources */,
+				5407C0501FA069740016D1A9 /* TDLiveControlView.m in Sources */,
+				5407C0581FA071410016D1A9 /* TDPlayerController.m in Sources */,
+				5407C01A1FA0627A0016D1A9 /* AppDelegate.m in Sources */,
+				5407C05E1FA0985A0016D1A9 /* TDPlayerViewModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5407C0291FA0627A0016D1A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5407C0321FA0627A0016D1A9 /* JXMediaPlayerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5407C0341FA0627A0016D1A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5407C03D1FA0627A0016D1A9 /* JXMediaPlayerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5407C02F1FA0627A0016D1A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5407C0141FA0627A0016D1A9 /* JXMediaPlayer */;
+			targetProxy = 5407C02E1FA0627A0016D1A9 /* PBXContainerItemProxy */;
+		};
+		5407C03A1FA0627A0016D1A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5407C0141FA0627A0016D1A9 /* JXMediaPlayer */;
+			targetProxy = 5407C0391FA0627A0016D1A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5407C01E1FA0627A0016D1A9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5407C01F1FA0627A0016D1A9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5407C0231FA0627A0016D1A9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5407C0241FA0627A0016D1A9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5407C03F1FA0627A0016D1A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5407C0401FA0627A0016D1A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5407C0421FA0627A0016D1A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCB868913403E4E3DB54EB72 /* Pods-JXMediaPlayer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J45R7ZYGYH;
+				INFOPLIST_FILE = JXMediaPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CL.JXMediaPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5407C0431FA0627A0016D1A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA968334AE8FC03B1A435C35 /* Pods-JXMediaPlayer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J45R7ZYGYH;
+				INFOPLIST_FILE = JXMediaPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CL.JXMediaPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5407C0451FA0627A0016D1A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J45R7ZYGYH;
+				INFOPLIST_FILE = JXMediaPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CL.JXMediaPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JXMediaPlayer.app/JXMediaPlayer";
+			};
+			name = Debug;
+		};
+		5407C0461FA0627A0016D1A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J45R7ZYGYH;
+				INFOPLIST_FILE = JXMediaPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CL.JXMediaPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JXMediaPlayer.app/JXMediaPlayer";
+			};
+			name = Release;
+		};
+		5407C0481FA0627A0016D1A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J45R7ZYGYH;
+				INFOPLIST_FILE = JXMediaPlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CL.JXMediaPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JXMediaPlayer;
+			};
+			name = Debug;
+		};
+		5407C0491FA0627A0016D1A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J45R7ZYGYH;
+				INFOPLIST_FILE = JXMediaPlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CL.JXMediaPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JXMediaPlayer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5407C0101FA0627A0016D1A9 /* Build configuration list for PBXProject "JXMediaPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5407C03F1FA0627A0016D1A9 /* Debug */,
+				5407C0401FA0627A0016D1A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5407C0411FA0627A0016D1A9 /* Build configuration list for PBXNativeTarget "JXMediaPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5407C0421FA0627A0016D1A9 /* Debug */,
+				5407C0431FA0627A0016D1A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5407C0441FA0627A0016D1A9 /* Build configuration list for PBXNativeTarget "JXMediaPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5407C0451FA0627A0016D1A9 /* Debug */,
+				5407C0461FA0627A0016D1A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5407C0471FA0627A0016D1A9 /* Build configuration list for PBXNativeTarget "JXMediaPlayerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5407C0481FA0627A0016D1A9 /* Debug */,
+				5407C0491FA0627A0016D1A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5407C00D1FA0627A0016D1A9 /* Project object */;
+}

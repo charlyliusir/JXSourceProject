@@ -1,0 +1,1359 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		54198F521F9DF2980092579B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54198F511F9DF2980092579B /* Images.xcassets */; };
+		549E31F51F90B3EB009CBDE6 /* JXApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549E31EB1F90B3EA009CBDE6 /* JXApi.framework */; };
+		549E31FA1F90B3EB009CBDE6 /* JXApiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 549E31F91F90B3EB009CBDE6 /* JXApiTests.m */; };
+		549E31FC1F90B3EB009CBDE6 /* JXApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 549E31EE1F90B3EA009CBDE6 /* JXApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54A18A731F9D9026002300B2 /* TDJXSourceFile.pch in Headers */ = {isa = PBXBuildFile; fileRef = 54A189D81F9D9025002300B2 /* TDJXSourceFile.pch */; };
+		54A18A741F9D9026002300B2 /* TDBaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A189DE1F9D9025002300B2 /* TDBaseViewController.h */; };
+		54A18A751F9D9026002300B2 /* TDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A189DF1F9D9025002300B2 /* TDBaseViewController.m */; };
+		54A18A761F9D9026002300B2 /* NSString+TDTextSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A189E11F9D9025002300B2 /* NSString+TDTextSize.h */; };
+		54A18A771F9D9026002300B2 /* NSString+TDTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A189E21F9D9025002300B2 /* NSString+TDTextSize.m */; };
+		54A18A781F9D9026002300B2 /* TDActivityInfoRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A189F21F9D9025002300B2 /* TDActivityInfoRequest.h */; };
+		54A18A791F9D9026002300B2 /* TDActivityInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A189F31F9D9025002300B2 /* TDActivityInfoRequest.m */; };
+		54A18A7A1F9D9026002300B2 /* TDGetChatListRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A189F41F9D9025002300B2 /* TDGetChatListRequest.h */; };
+		54A18A7B1F9D9026002300B2 /* TDGetChatListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A189F51F9D9025002300B2 /* TDGetChatListRequest.m */; };
+		54A18A7C1F9D9026002300B2 /* TDLiveInfoRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A189F61F9D9025002300B2 /* TDLiveInfoRequest.h */; };
+		54A18A7D1F9D9026002300B2 /* TDLiveInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A189F71F9D9025002300B2 /* TDLiveInfoRequest.m */; };
+		54A18A7E1F9D9026002300B2 /* TDSendMessageRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A189F81F9D9025002300B2 /* TDSendMessageRequest.h */; };
+		54A18A7F1F9D9026002300B2 /* TDSendMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A189F91F9D9025002300B2 /* TDSendMessageRequest.m */; };
+		54A18A801F9D9026002300B2 /* TDThroughViewRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A189FA1F9D9025002300B2 /* TDThroughViewRequest.h */; };
+		54A18A811F9D9026002300B2 /* TDThroughViewRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A189FB1F9D9025002300B2 /* TDThroughViewRequest.m */; };
+		54A18A821F9D9026002300B2 /* TDActivityResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A189FD1F9D9025002300B2 /* TDActivityResponse.h */; };
+		54A18A831F9D9026002300B2 /* TDActivityResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A189FE1F9D9025002300B2 /* TDActivityResponse.m */; };
+		54A18A841F9D9026002300B2 /* TDGetChatListResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A189FF1F9D9025002300B2 /* TDGetChatListResponse.h */; };
+		54A18A851F9D9026002300B2 /* TDGetChatListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A001F9D9025002300B2 /* TDGetChatListResponse.m */; };
+		54A18A861F9D9026002300B2 /* TDLiveInfoResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A011F9D9025002300B2 /* TDLiveInfoResponse.h */; };
+		54A18A871F9D9026002300B2 /* TDLiveInfoResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A021F9D9025002300B2 /* TDLiveInfoResponse.m */; };
+		54A18A881F9D9026002300B2 /* TDHttpRequestType.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A071F9D9025002300B2 /* TDHttpRequestType.h */; };
+		54A18A891F9D9026002300B2 /* TDHttpResponseHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A081F9D9025002300B2 /* TDHttpResponseHandler.h */; };
+		54A18A8A1F9D9026002300B2 /* TDHttpResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A091F9D9025002300B2 /* TDHttpResponseHandler.m */; };
+		54A18A8B1F9D9026002300B2 /* TDHttpResponseType.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A0A1F9D9025002300B2 /* TDHttpResponseType.h */; };
+		54A18A8C1F9D9026002300B2 /* TDCommonClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A0B1F9D9025002300B2 /* TDCommonClient.h */; };
+		54A18A8D1F9D9026002300B2 /* TDCommonClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A0C1F9D9025002300B2 /* TDCommonClient.m */; };
+		54A18A8E1F9D9026002300B2 /* TDHttpCommonHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A0D1F9D9025002300B2 /* TDHttpCommonHeader.h */; };
+		54A18A8F1F9D9026002300B2 /* TDHttpEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A0E1F9D9025002300B2 /* TDHttpEncoding.h */; };
+		54A18A901F9D9026002300B2 /* TDHttpEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A0F1F9D9025002300B2 /* TDHttpEncoding.m */; };
+		54A18A911F9D9026002300B2 /* TDHttpManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A101F9D9025002300B2 /* TDHttpManager.h */; };
+		54A18A921F9D9026002300B2 /* TDHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A111F9D9025002300B2 /* TDHttpManager.m */; };
+		54A18A931F9D9026002300B2 /* TDLiveChatRoomChatListModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A151F9D9025002300B2 /* TDLiveChatRoomChatListModel.h */; };
+		54A18A941F9D9026002300B2 /* TDLiveChatRoomChatListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A161F9D9025002300B2 /* TDLiveChatRoomChatListModel.m */; };
+		54A18A951F9D9026002300B2 /* TDLiveChatRoomModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A171F9D9025002300B2 /* TDLiveChatRoomModel.h */; };
+		54A18A961F9D9026002300B2 /* TDLiveChatRoomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A181F9D9025002300B2 /* TDLiveChatRoomModel.m */; };
+		54A18A971F9D9026002300B2 /* TDChatRoomTextCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A1A1F9D9025002300B2 /* TDChatRoomTextCell.h */; };
+		54A18A981F9D9026002300B2 /* TDChatRoomTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A1B1F9D9025002300B2 /* TDChatRoomTextCell.m */; };
+		54A18A991F9D9026002300B2 /* TDLiveVideoChatRoomController.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A1D1F9D9025002300B2 /* TDLiveVideoChatRoomController.h */; };
+		54A18A9A1F9D9026002300B2 /* TDLiveVideoChatRoomController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A1E1F9D9025002300B2 /* TDLiveVideoChatRoomController.m */; };
+		54A18A9B1F9D9026002300B2 /* TDLiveChatRoomViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A201F9D9025002300B2 /* TDLiveChatRoomViewModel.h */; };
+		54A18A9C1F9D9026002300B2 /* TDLiveChatRoomViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A211F9D9025002300B2 /* TDLiveChatRoomViewModel.m */; };
+		54A18A9D1F9D9026002300B2 /* TDLiveDynamicModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A241F9D9025002300B2 /* TDLiveDynamicModel.h */; };
+		54A18A9E1F9D9026002300B2 /* TDLiveDynamicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A251F9D9025002300B2 /* TDLiveDynamicModel.m */; };
+		54A18A9F1F9D9026002300B2 /* TDLiveVideoDynamicController.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A281F9D9025002300B2 /* TDLiveVideoDynamicController.h */; };
+		54A18AA01F9D9026002300B2 /* TDLiveVideoDynamicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A291F9D9025002300B2 /* TDLiveVideoDynamicController.m */; };
+		54A18AA21F9D9026002300B2 /* TDLiveDynamicViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A2C1F9D9025002300B2 /* TDLiveDynamicViewModel.h */; };
+		54A18AA31F9D9026002300B2 /* TDLiveDynamicViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A2D1F9D9025002300B2 /* TDLiveDynamicViewModel.m */; };
+		54A18AA41F9D9026002300B2 /* TDActivityInfoModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A301F9D9025002300B2 /* TDActivityInfoModel.h */; };
+		54A18AA51F9D9026002300B2 /* TDActivityInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A311F9D9025002300B2 /* TDActivityInfoModel.m */; };
+		54A18AA61F9D9026002300B2 /* TDActivityInterModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A321F9D9025002300B2 /* TDActivityInterModel.h */; };
+		54A18AA71F9D9026002300B2 /* TDActivityInterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A331F9D9025002300B2 /* TDActivityInterModel.m */; };
+		54A18AA81F9D9026002300B2 /* TDActivityNarrModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A341F9D9025002300B2 /* TDActivityNarrModel.h */; };
+		54A18AA91F9D9026002300B2 /* TDActivityNarrModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A351F9D9025002300B2 /* TDActivityNarrModel.m */; };
+		54A18AAA1F9D9026002300B2 /* TDLiveInfoModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A361F9D9025002300B2 /* TDLiveInfoModel.h */; };
+		54A18AAB1F9D9026002300B2 /* TDLiveInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A371F9D9025002300B2 /* TDLiveInfoModel.m */; };
+		54A18AAC1F9D9026002300B2 /* TDLiveVideoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A3A1F9D9025002300B2 /* TDLiveVideoViewController.h */; };
+		54A18AAD1F9D9026002300B2 /* TDLiveVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A3B1F9D9025002300B2 /* TDLiveVideoViewController.m */; };
+		54A18AAE1F9D9026002300B2 /* TDActivityInfoViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A3D1F9D9025002300B2 /* TDActivityInfoViewModel.h */; };
+		54A18AAF1F9D9026002300B2 /* TDActivityInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A3E1F9D9025002300B2 /* TDActivityInfoViewModel.m */; };
+		54A18AB01F9D9026002300B2 /* TDLiveInfoViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A3F1F9D9025002300B2 /* TDLiveInfoViewModel.h */; };
+		54A18AB11F9D9026002300B2 /* TDLiveInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A401F9D9025002300B2 /* TDLiveInfoViewModel.m */; };
+		54A18AB21F9D9026002300B2 /* TDLiveIntroModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A431F9D9025002300B2 /* TDLiveIntroModel.h */; };
+		54A18AB31F9D9026002300B2 /* TDLiveIntroModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A441F9D9025002300B2 /* TDLiveIntroModel.m */; };
+		54A18AB41F9D9026002300B2 /* TDLiveVideoIntroController.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A471F9D9025002300B2 /* TDLiveVideoIntroController.h */; };
+		54A18AB51F9D9026002300B2 /* TDLiveVideoIntroController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A481F9D9025002300B2 /* TDLiveVideoIntroController.m */; };
+		54A18AB71F9D9026002300B2 /* TDLiveIntroViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A4B1F9D9025002300B2 /* TDLiveIntroViewModel.h */; };
+		54A18AB81F9D9026002300B2 /* TDLiveIntroViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A4C1F9D9025002300B2 /* TDLiveIntroViewModel.m */; };
+		54A18AB91F9D9026002300B2 /* TDCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A4E1F9D9025002300B2 /* TDCommon.h */; };
+		54A18ABA1F9D9026002300B2 /* UIColor+TDHex.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A521F9D9026002300B2 /* UIColor+TDHex.h */; };
+		54A18ABB1F9D9026002300B2 /* UIColor+TDHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A531F9D9026002300B2 /* UIColor+TDHex.m */; };
+		54A18ABC1F9D9026002300B2 /* CLTapBarCommons.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A551F9D9026002300B2 /* CLTapBarCommons.h */; };
+		54A18ABD1F9D9026002300B2 /* CLTapBarViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A571F9D9026002300B2 /* CLTapBarViewDelegate.h */; };
+		54A18ABE1F9D9026002300B2 /* CLTapViewControllerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A581F9D9026002300B2 /* CLTapViewControllerProtocol.h */; };
+		54A18ABF1F9D9026002300B2 /* CLTabBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A5A1F9D9026002300B2 /* CLTabBarButtonItem.h */; };
+		54A18AC01F9D9026002300B2 /* CLTabBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A5B1F9D9026002300B2 /* CLTabBarButtonItem.m */; };
+		54A18AC11F9D9026002300B2 /* CLTapBarButtonItemModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A5C1F9D9026002300B2 /* CLTapBarButtonItemModel.h */; };
+		54A18AC21F9D9026002300B2 /* CLTapBarButtonItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A5D1F9D9026002300B2 /* CLTapBarButtonItemModel.m */; };
+		54A18AC31F9D9026002300B2 /* CLTapBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A5E1F9D9026002300B2 /* CLTapBarItem.h */; };
+		54A18AC41F9D9026002300B2 /* CLTapBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A5F1F9D9026002300B2 /* CLTapBarItem.m */; };
+		54A18AC51F9D9026002300B2 /* CLTapBarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A601F9D9026002300B2 /* CLTapBarView.h */; };
+		54A18AC61F9D9026002300B2 /* CLTapBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A611F9D9026002300B2 /* CLTapBarView.m */; };
+		54A18AC71F9D9026002300B2 /* CLTapViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18A631F9D9026002300B2 /* CLTapViewController.h */; };
+		54A18AC81F9D9026002300B2 /* CLTapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18A641F9D9026002300B2 /* CLTapViewController.m */; };
+		54A18AC91F9D9026002300B2 /* language.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54A18A671F9D9026002300B2 /* language.strings */; };
+		54A18AD01F9D9083002300B2 /* JXApiHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A18ACE1F9D9083002300B2 /* JXApiHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54A18AD11F9D9083002300B2 /* JXApiHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A18ACF1F9D9083002300B2 /* JXApiHeader.m */; };
+		9E12691EEF5585DBF0549B67 /* Pods_JXApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F648024B716A77A1AB1D8372 /* Pods_JXApi.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		549E31F61F90B3EB009CBDE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 549E31E21F90B3EA009CBDE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 549E31EA1F90B3EA009CBDE6;
+			remoteInfo = JXApi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D5A108B450C26CAAB5F4D42 /* Pods-JXApi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXApi.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXApi/Pods-JXApi.release.xcconfig"; sourceTree = "<group>"; };
+		54198F511F9DF2980092579B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		549E31EB1F90B3EA009CBDE6 /* JXApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JXApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		549E31EE1F90B3EA009CBDE6 /* JXApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXApi.h; sourceTree = "<group>"; };
+		549E31EF1F90B3EA009CBDE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		549E31F41F90B3EB009CBDE6 /* JXApiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JXApiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		549E31F91F90B3EB009CBDE6 /* JXApiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXApiTests.m; sourceTree = "<group>"; };
+		549E31FB1F90B3EB009CBDE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54A189D81F9D9025002300B2 /* TDJXSourceFile.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDJXSourceFile.pch; sourceTree = "<group>"; };
+		54A189DE1F9D9025002300B2 /* TDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBaseViewController.h; sourceTree = "<group>"; };
+		54A189DF1F9D9025002300B2 /* TDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBaseViewController.m; sourceTree = "<group>"; };
+		54A189E11F9D9025002300B2 /* NSString+TDTextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TDTextSize.h"; sourceTree = "<group>"; };
+		54A189E21F9D9025002300B2 /* NSString+TDTextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TDTextSize.m"; sourceTree = "<group>"; };
+		54A189F21F9D9025002300B2 /* TDActivityInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDActivityInfoRequest.h; sourceTree = "<group>"; };
+		54A189F31F9D9025002300B2 /* TDActivityInfoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDActivityInfoRequest.m; sourceTree = "<group>"; };
+		54A189F41F9D9025002300B2 /* TDGetChatListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDGetChatListRequest.h; sourceTree = "<group>"; };
+		54A189F51F9D9025002300B2 /* TDGetChatListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDGetChatListRequest.m; sourceTree = "<group>"; };
+		54A189F61F9D9025002300B2 /* TDLiveInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLiveInfoRequest.h; sourceTree = "<group>"; };
+		54A189F71F9D9025002300B2 /* TDLiveInfoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLiveInfoRequest.m; sourceTree = "<group>"; };
+		54A189F81F9D9025002300B2 /* TDSendMessageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSendMessageRequest.h; sourceTree = "<group>"; };
+		54A189F91F9D9025002300B2 /* TDSendMessageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSendMessageRequest.m; sourceTree = "<group>"; };
+		54A189FA1F9D9025002300B2 /* TDThroughViewRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDThroughViewRequest.h; sourceTree = "<group>"; };
+		54A189FB1F9D9025002300B2 /* TDThroughViewRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDThroughViewRequest.m; sourceTree = "<group>"; };
+		54A189FD1F9D9025002300B2 /* TDActivityResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDActivityResponse.h; sourceTree = "<group>"; };
+		54A189FE1F9D9025002300B2 /* TDActivityResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDActivityResponse.m; sourceTree = "<group>"; };
+		54A189FF1F9D9025002300B2 /* TDGetChatListResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDGetChatListResponse.h; sourceTree = "<group>"; };
+		54A18A001F9D9025002300B2 /* TDGetChatListResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDGetChatListResponse.m; sourceTree = "<group>"; };
+		54A18A011F9D9025002300B2 /* TDLiveInfoResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLiveInfoResponse.h; sourceTree = "<group>"; };
+		54A18A021F9D9025002300B2 /* TDLiveInfoResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLiveInfoResponse.m; sourceTree = "<group>"; };
+		54A18A071F9D9025002300B2 /* TDHttpRequestType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHttpRequestType.h; sourceTree = "<group>"; };
+		54A18A081F9D9025002300B2 /* TDHttpResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHttpResponseHandler.h; sourceTree = "<group>"; };
+		54A18A091F9D9025002300B2 /* TDHttpResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHttpResponseHandler.m; sourceTree = "<group>"; };
+		54A18A0A1F9D9025002300B2 /* TDHttpResponseType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHttpResponseType.h; sourceTree = "<group>"; };
+		54A18A0B1F9D9025002300B2 /* TDCommonClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCommonClient.h; sourceTree = "<group>"; };
+		54A18A0C1F9D9025002300B2 /* TDCommonClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCommonClient.m; sourceTree = "<group>"; };
+		54A18A0D1F9D9025002300B2 /* TDHttpCommonHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHttpCommonHeader.h; sourceTree = "<group>"; };
+		54A18A0E1F9D9025002300B2 /* TDHttpEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHttpEncoding.h; sourceTree = "<group>"; };
+		54A18A0F1F9D9025002300B2 /* TDHttpEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHttpEncoding.m; sourceTree = "<group>"; };
+		54A18A101F9D9025002300B2 /* TDHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHttpManager.h; sourceTree = "<group>"; };
+		54A18A111F9D9025002300B2 /* TDHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHttpManager.m; sourceTree = "<group>"; };
+		54A18A151F9D9025002300B2 /* TDLiveChatRoomChatListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLiveChatRoomChatListModel.h; sourceTree = "<group>"; };
+		54A18A161F9D9025002300B2 /* TDLiveChatRoomChatListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLiveChatRoomChatListModel.m; sourceTree = "<group>"; };
+		54A18A171F9D9025002300B2 /* TDLiveChatRoomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLiveChatRoomModel.h; sourceTree = "<group>"; };
+		54A18A181F9D9025002300B2 /* TDLiveChatRoomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLiveChatRoomModel.m; sourceTree = "<group>"; };
+		54A18A1A1F9D9025002300B2 /* TDChatRoomTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDChatRoomTextCell.h; sourceTree = "<group>"; };
+		54A18A1B1F9D9025002300B2 /* TDChatRoomTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDChatRoomTextCell.m; sourceTree = "<group>"; };
+		54A18A1D1F9D9025002300B2 /* TDLiveVideoChatRoomController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLiveVideoChatRoomController.h; sourceTree = "<group>"; };
+		54A18A1E1F9D9025002300B2 /* TDLiveVideoChatRoomController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLiveVideoChatRoomController.m; sourceTree = "<group>"; };
+		54A18A201F9D9025002300B2 /* TDLiveChatRoomViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLiveChatRoomViewModel.h; sourceTree = "<group>"; };
+		54A18A211F9D9025002300B2 /* TDLiveChatRoomViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLiveChatRoomViewModel.m; sourceTree = "<group>"; };
+		54A18A241F9D9025002300B2 /* TDLiveDynamicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLiveDynamicModel.h; sourceTree = "<group>"; };
+		54A18A251F9D9025002300B2 /* TDLiveDynamicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLiveDynamicModel.m; sourceTree = "<group>"; };
+		54A18A281F9D9025002300B2 /* TDLiveVideoDynamicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLiveVideoDynamicController.h; sourceTree = "<group>"; };
+		54A18A291F9D9025002300B2 /* TDLiveVideoDynamicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLiveVideoDynamicController.m; sourceTree = "<group>"; };
+		54A18A2C1F9D9025002300B2 /* TDLiveDynamicViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLiveDynamicViewModel.h; sourceTree = "<group>"; };
+		54A18A2D1F9D9025002300B2 /* TDLiveDynamicViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLiveDynamicViewModel.m; sourceTree = "<group>"; };
+		54A18A301F9D9025002300B2 /* TDActivityInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDActivityInfoModel.h; sourceTree = "<group>"; };
+		54A18A311F9D9025002300B2 /* TDActivityInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDActivityInfoModel.m; sourceTree = "<group>"; };
+		54A18A321F9D9025002300B2 /* TDActivityInterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDActivityInterModel.h; sourceTree = "<group>"; };
+		54A18A331F9D9025002300B2 /* TDActivityInterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDActivityInterModel.m; sourceTree = "<group>"; };
+		54A18A341F9D9025002300B2 /* TDActivityNarrModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDActivityNarrModel.h; sourceTree = "<group>"; };
+		54A18A351F9D9025002300B2 /* TDActivityNarrModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDActivityNarrModel.m; sourceTree = "<group>"; };
+		54A18A361F9D9025002300B2 /* TDLiveInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLiveInfoModel.h; sourceTree = "<group>"; };
+		54A18A371F9D9025002300B2 /* TDLiveInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLiveInfoModel.m; sourceTree = "<group>"; };
+		54A18A3A1F9D9025002300B2 /* TDLiveVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLiveVideoViewController.h; sourceTree = "<group>"; };
+		54A18A3B1F9D9025002300B2 /* TDLiveVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLiveVideoViewController.m; sourceTree = "<group>"; };
+		54A18A3D1F9D9025002300B2 /* TDActivityInfoViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDActivityInfoViewModel.h; sourceTree = "<group>"; };
+		54A18A3E1F9D9025002300B2 /* TDActivityInfoViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDActivityInfoViewModel.m; sourceTree = "<group>"; };
+		54A18A3F1F9D9025002300B2 /* TDLiveInfoViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLiveInfoViewModel.h; sourceTree = "<group>"; };
+		54A18A401F9D9025002300B2 /* TDLiveInfoViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLiveInfoViewModel.m; sourceTree = "<group>"; };
+		54A18A431F9D9025002300B2 /* TDLiveIntroModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLiveIntroModel.h; sourceTree = "<group>"; };
+		54A18A441F9D9025002300B2 /* TDLiveIntroModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLiveIntroModel.m; sourceTree = "<group>"; };
+		54A18A471F9D9025002300B2 /* TDLiveVideoIntroController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLiveVideoIntroController.h; sourceTree = "<group>"; };
+		54A18A481F9D9025002300B2 /* TDLiveVideoIntroController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLiveVideoIntroController.m; sourceTree = "<group>"; };
+		54A18A4B1F9D9025002300B2 /* TDLiveIntroViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLiveIntroViewModel.h; sourceTree = "<group>"; };
+		54A18A4C1F9D9025002300B2 /* TDLiveIntroViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLiveIntroViewModel.m; sourceTree = "<group>"; };
+		54A18A4E1F9D9025002300B2 /* TDCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCommon.h; sourceTree = "<group>"; };
+		54A18A521F9D9026002300B2 /* UIColor+TDHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+TDHex.h"; sourceTree = "<group>"; };
+		54A18A531F9D9026002300B2 /* UIColor+TDHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TDHex.m"; sourceTree = "<group>"; };
+		54A18A551F9D9026002300B2 /* CLTapBarCommons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTapBarCommons.h; sourceTree = "<group>"; };
+		54A18A571F9D9026002300B2 /* CLTapBarViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTapBarViewDelegate.h; sourceTree = "<group>"; };
+		54A18A581F9D9026002300B2 /* CLTapViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTapViewControllerProtocol.h; sourceTree = "<group>"; };
+		54A18A5A1F9D9026002300B2 /* CLTabBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTabBarButtonItem.h; sourceTree = "<group>"; };
+		54A18A5B1F9D9026002300B2 /* CLTabBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTabBarButtonItem.m; sourceTree = "<group>"; };
+		54A18A5C1F9D9026002300B2 /* CLTapBarButtonItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTapBarButtonItemModel.h; sourceTree = "<group>"; };
+		54A18A5D1F9D9026002300B2 /* CLTapBarButtonItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTapBarButtonItemModel.m; sourceTree = "<group>"; };
+		54A18A5E1F9D9026002300B2 /* CLTapBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTapBarItem.h; sourceTree = "<group>"; };
+		54A18A5F1F9D9026002300B2 /* CLTapBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTapBarItem.m; sourceTree = "<group>"; };
+		54A18A601F9D9026002300B2 /* CLTapBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTapBarView.h; sourceTree = "<group>"; };
+		54A18A611F9D9026002300B2 /* CLTapBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTapBarView.m; sourceTree = "<group>"; };
+		54A18A631F9D9026002300B2 /* CLTapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTapViewController.h; sourceTree = "<group>"; };
+		54A18A641F9D9026002300B2 /* CLTapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTapViewController.m; sourceTree = "<group>"; };
+		54A18A681F9D9026002300B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/language.strings; sourceTree = "<group>"; };
+		54A18A6D1F9D9026002300B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/language.strings; sourceTree = "<group>"; };
+		54A18A6E1F9D9026002300B2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/language.strings"; sourceTree = "<group>"; };
+		54A18ACE1F9D9083002300B2 /* JXApiHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXApiHeader.h; sourceTree = "<group>"; };
+		54A18ACF1F9D9083002300B2 /* JXApiHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXApiHeader.m; sourceTree = "<group>"; };
+		9F673BAF57EF29CE8D08B694 /* Pods-JXApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXApi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXApi/Pods-JXApi.debug.xcconfig"; sourceTree = "<group>"; };
+		F648024B716A77A1AB1D8372 /* Pods_JXApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JXApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		549E31E71F90B3EA009CBDE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E12691EEF5585DBF0549B67 /* Pods_JXApi.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		549E31F11F90B3EB009CBDE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				549E31F51F90B3EB009CBDE6 /* JXApi.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		549E31E11F90B3EA009CBDE6 = {
+			isa = PBXGroup;
+			children = (
+				549E31ED1F90B3EA009CBDE6 /* JXApi */,
+				549E31F81F90B3EB009CBDE6 /* JXApiTests */,
+				549E31EC1F90B3EA009CBDE6 /* Products */,
+				79E4724CEBC6A54B2664C058 /* Pods */,
+				ED53E6EAC337759A43FEA484 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		549E31EC1F90B3EA009CBDE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				549E31EB1F90B3EA009CBDE6 /* JXApi.framework */,
+				549E31F41F90B3EB009CBDE6 /* JXApiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		549E31ED1F90B3EA009CBDE6 /* JXApi */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A4D1F9D9025002300B2 /* Application */,
+				54A18A651F9D9026002300B2 /* Libs */,
+				54A18A4F1F9D9026002300B2 /* Utils */,
+				54A189D91F9D9025002300B2 /* Class */,
+				54A18A661F9D9026002300B2 /* Resources */,
+				54A189D71F9D9025002300B2 /* Support */,
+			);
+			path = JXApi;
+			sourceTree = "<group>";
+		};
+		549E31F81F90B3EB009CBDE6 /* JXApiTests */ = {
+			isa = PBXGroup;
+			children = (
+				549E31F91F90B3EB009CBDE6 /* JXApiTests.m */,
+				549E31FB1F90B3EB009CBDE6 /* Info.plist */,
+			);
+			path = JXApiTests;
+			sourceTree = "<group>";
+		};
+		54A189D71F9D9025002300B2 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				549E31EE1F90B3EA009CBDE6 /* JXApi.h */,
+				549E31EF1F90B3EA009CBDE6 /* Info.plist */,
+				54A189D81F9D9025002300B2 /* TDJXSourceFile.pch */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		54A189D91F9D9025002300B2 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				54A189DA1F9D9025002300B2 /* Base */,
+				54A189E01F9D9025002300B2 /* Category */,
+				54A189E31F9D9025002300B2 /* Config */,
+				54A189E41F9D9025002300B2 /* Extension */,
+				54A189E51F9D9025002300B2 /* Https */,
+				54A18A121F9D9025002300B2 /* ViewControllers */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		54A189DA1F9D9025002300B2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				54A189DB1F9D9025002300B2 /* NavigationController */,
+				54A189DC1F9D9025002300B2 /* View */,
+				54A189DD1F9D9025002300B2 /* ViewController */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		54A189DB1F9D9025002300B2 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		54A189DC1F9D9025002300B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54A189DD1F9D9025002300B2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54A189DE1F9D9025002300B2 /* TDBaseViewController.h */,
+				54A189DF1F9D9025002300B2 /* TDBaseViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54A189E01F9D9025002300B2 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				54A189E11F9D9025002300B2 /* NSString+TDTextSize.h */,
+				54A189E21F9D9025002300B2 /* NSString+TDTextSize.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		54A189E31F9D9025002300B2 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		54A189E41F9D9025002300B2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		54A189E51F9D9025002300B2 /* Https */ = {
+			isa = PBXGroup;
+			children = (
+				54A189E61F9D9025002300B2 /* Class */,
+				54A18A061F9D9025002300B2 /* ProtocalHttp */,
+				54A18A0B1F9D9025002300B2 /* TDCommonClient.h */,
+				54A18A0C1F9D9025002300B2 /* TDCommonClient.m */,
+				54A18A0D1F9D9025002300B2 /* TDHttpCommonHeader.h */,
+				54A18A0E1F9D9025002300B2 /* TDHttpEncoding.h */,
+				54A18A0F1F9D9025002300B2 /* TDHttpEncoding.m */,
+				54A18A101F9D9025002300B2 /* TDHttpManager.h */,
+				54A18A111F9D9025002300B2 /* TDHttpManager.m */,
+			);
+			path = Https;
+			sourceTree = "<group>";
+		};
+		54A189E61F9D9025002300B2 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				54A189E71F9D9025002300B2 /* Base */,
+				54A189EA1F9D9025002300B2 /* LiveChatRoom */,
+				54A189ED1F9D9025002300B2 /* LiveDynamic */,
+				54A189F01F9D9025002300B2 /* LiveInfo */,
+				54A18A031F9D9025002300B2 /* LiveIntro */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		54A189E71F9D9025002300B2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				54A189E81F9D9025002300B2 /* Request */,
+				54A189E91F9D9025002300B2 /* Response */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		54A189E81F9D9025002300B2 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		54A189E91F9D9025002300B2 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		54A189EA1F9D9025002300B2 /* LiveChatRoom */ = {
+			isa = PBXGroup;
+			children = (
+				54A189EB1F9D9025002300B2 /* Request */,
+				54A189EC1F9D9025002300B2 /* Response */,
+			);
+			path = LiveChatRoom;
+			sourceTree = "<group>";
+		};
+		54A189EB1F9D9025002300B2 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		54A189EC1F9D9025002300B2 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		54A189ED1F9D9025002300B2 /* LiveDynamic */ = {
+			isa = PBXGroup;
+			children = (
+				54A189EE1F9D9025002300B2 /* Request */,
+				54A189EF1F9D9025002300B2 /* Response */,
+			);
+			path = LiveDynamic;
+			sourceTree = "<group>";
+		};
+		54A189EE1F9D9025002300B2 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		54A189EF1F9D9025002300B2 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		54A189F01F9D9025002300B2 /* LiveInfo */ = {
+			isa = PBXGroup;
+			children = (
+				54A189F11F9D9025002300B2 /* Request */,
+				54A189FC1F9D9025002300B2 /* Response */,
+			);
+			path = LiveInfo;
+			sourceTree = "<group>";
+		};
+		54A189F11F9D9025002300B2 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				54A189F21F9D9025002300B2 /* TDActivityInfoRequest.h */,
+				54A189F31F9D9025002300B2 /* TDActivityInfoRequest.m */,
+				54A189F41F9D9025002300B2 /* TDGetChatListRequest.h */,
+				54A189F51F9D9025002300B2 /* TDGetChatListRequest.m */,
+				54A189F61F9D9025002300B2 /* TDLiveInfoRequest.h */,
+				54A189F71F9D9025002300B2 /* TDLiveInfoRequest.m */,
+				54A189F81F9D9025002300B2 /* TDSendMessageRequest.h */,
+				54A189F91F9D9025002300B2 /* TDSendMessageRequest.m */,
+				54A189FA1F9D9025002300B2 /* TDThroughViewRequest.h */,
+				54A189FB1F9D9025002300B2 /* TDThroughViewRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		54A189FC1F9D9025002300B2 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				54A189FD1F9D9025002300B2 /* TDActivityResponse.h */,
+				54A189FE1F9D9025002300B2 /* TDActivityResponse.m */,
+				54A189FF1F9D9025002300B2 /* TDGetChatListResponse.h */,
+				54A18A001F9D9025002300B2 /* TDGetChatListResponse.m */,
+				54A18A011F9D9025002300B2 /* TDLiveInfoResponse.h */,
+				54A18A021F9D9025002300B2 /* TDLiveInfoResponse.m */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		54A18A031F9D9025002300B2 /* LiveIntro */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A041F9D9025002300B2 /* Request */,
+				54A18A051F9D9025002300B2 /* Response */,
+			);
+			path = LiveIntro;
+			sourceTree = "<group>";
+		};
+		54A18A041F9D9025002300B2 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		54A18A051F9D9025002300B2 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		54A18A061F9D9025002300B2 /* ProtocalHttp */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A071F9D9025002300B2 /* TDHttpRequestType.h */,
+				54A18A081F9D9025002300B2 /* TDHttpResponseHandler.h */,
+				54A18A091F9D9025002300B2 /* TDHttpResponseHandler.m */,
+				54A18A0A1F9D9025002300B2 /* TDHttpResponseType.h */,
+			);
+			path = ProtocalHttp;
+			sourceTree = "<group>";
+		};
+		54A18A121F9D9025002300B2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A131F9D9025002300B2 /* LiveVideoChatRoom */,
+				54A18A221F9D9025002300B2 /* LiveVideoDynamic */,
+				54A18A411F9D9025002300B2 /* LiveVideoIntro */,
+				54A18A2E1F9D9025002300B2 /* LiveVideoInfo */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		54A18A131F9D9025002300B2 /* LiveVideoChatRoom */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A141F9D9025002300B2 /* Model */,
+				54A18A191F9D9025002300B2 /* View */,
+				54A18A1C1F9D9025002300B2 /* ViewController */,
+				54A18A1F1F9D9025002300B2 /* ViewModel */,
+			);
+			path = LiveVideoChatRoom;
+			sourceTree = "<group>";
+		};
+		54A18A141F9D9025002300B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A151F9D9025002300B2 /* TDLiveChatRoomChatListModel.h */,
+				54A18A161F9D9025002300B2 /* TDLiveChatRoomChatListModel.m */,
+				54A18A171F9D9025002300B2 /* TDLiveChatRoomModel.h */,
+				54A18A181F9D9025002300B2 /* TDLiveChatRoomModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		54A18A191F9D9025002300B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A1A1F9D9025002300B2 /* TDChatRoomTextCell.h */,
+				54A18A1B1F9D9025002300B2 /* TDChatRoomTextCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54A18A1C1F9D9025002300B2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A1D1F9D9025002300B2 /* TDLiveVideoChatRoomController.h */,
+				54A18A1E1F9D9025002300B2 /* TDLiveVideoChatRoomController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54A18A1F1F9D9025002300B2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A201F9D9025002300B2 /* TDLiveChatRoomViewModel.h */,
+				54A18A211F9D9025002300B2 /* TDLiveChatRoomViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		54A18A221F9D9025002300B2 /* LiveVideoDynamic */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A231F9D9025002300B2 /* Model */,
+				54A18A261F9D9025002300B2 /* View */,
+				54A18A271F9D9025002300B2 /* ViewController */,
+				54A18A2B1F9D9025002300B2 /* ViewModel */,
+			);
+			path = LiveVideoDynamic;
+			sourceTree = "<group>";
+		};
+		54A18A231F9D9025002300B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A241F9D9025002300B2 /* TDLiveDynamicModel.h */,
+				54A18A251F9D9025002300B2 /* TDLiveDynamicModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		54A18A261F9D9025002300B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54A18A271F9D9025002300B2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A281F9D9025002300B2 /* TDLiveVideoDynamicController.h */,
+				54A18A291F9D9025002300B2 /* TDLiveVideoDynamicController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54A18A2B1F9D9025002300B2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A2C1F9D9025002300B2 /* TDLiveDynamicViewModel.h */,
+				54A18A2D1F9D9025002300B2 /* TDLiveDynamicViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		54A18A2E1F9D9025002300B2 /* LiveVideoInfo */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A2F1F9D9025002300B2 /* Model */,
+				54A18A381F9D9025002300B2 /* View */,
+				54A18A391F9D9025002300B2 /* ViewController */,
+				54A18A3C1F9D9025002300B2 /* ViewModel */,
+			);
+			path = LiveVideoInfo;
+			sourceTree = "<group>";
+		};
+		54A18A2F1F9D9025002300B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A301F9D9025002300B2 /* TDActivityInfoModel.h */,
+				54A18A311F9D9025002300B2 /* TDActivityInfoModel.m */,
+				54A18A321F9D9025002300B2 /* TDActivityInterModel.h */,
+				54A18A331F9D9025002300B2 /* TDActivityInterModel.m */,
+				54A18A341F9D9025002300B2 /* TDActivityNarrModel.h */,
+				54A18A351F9D9025002300B2 /* TDActivityNarrModel.m */,
+				54A18A361F9D9025002300B2 /* TDLiveInfoModel.h */,
+				54A18A371F9D9025002300B2 /* TDLiveInfoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		54A18A381F9D9025002300B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54A18A391F9D9025002300B2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A3A1F9D9025002300B2 /* TDLiveVideoViewController.h */,
+				54A18A3B1F9D9025002300B2 /* TDLiveVideoViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54A18A3C1F9D9025002300B2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A3D1F9D9025002300B2 /* TDActivityInfoViewModel.h */,
+				54A18A3E1F9D9025002300B2 /* TDActivityInfoViewModel.m */,
+				54A18A3F1F9D9025002300B2 /* TDLiveInfoViewModel.h */,
+				54A18A401F9D9025002300B2 /* TDLiveInfoViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		54A18A411F9D9025002300B2 /* LiveVideoIntro */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A421F9D9025002300B2 /* Model */,
+				54A18A451F9D9025002300B2 /* View */,
+				54A18A461F9D9025002300B2 /* ViewController */,
+				54A18A4A1F9D9025002300B2 /* ViewModel */,
+			);
+			path = LiveVideoIntro;
+			sourceTree = "<group>";
+		};
+		54A18A421F9D9025002300B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A431F9D9025002300B2 /* TDLiveIntroModel.h */,
+				54A18A441F9D9025002300B2 /* TDLiveIntroModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		54A18A451F9D9025002300B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54A18A461F9D9025002300B2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A471F9D9025002300B2 /* TDLiveVideoIntroController.h */,
+				54A18A481F9D9025002300B2 /* TDLiveVideoIntroController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54A18A4A1F9D9025002300B2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A4B1F9D9025002300B2 /* TDLiveIntroViewModel.h */,
+				54A18A4C1F9D9025002300B2 /* TDLiveIntroViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		54A18A4D1F9D9025002300B2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A4E1F9D9025002300B2 /* TDCommon.h */,
+				54A18ACE1F9D9083002300B2 /* JXApiHeader.h */,
+				54A18ACF1F9D9083002300B2 /* JXApiHeader.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		54A18A4F1F9D9026002300B2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A501F9D9026002300B2 /* CLTapView */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		54A18A501F9D9026002300B2 /* CLTapView */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A511F9D9026002300B2 /* Category */,
+				54A18A541F9D9026002300B2 /* Configs */,
+				54A18A561F9D9026002300B2 /* Protocol */,
+				54A18A591F9D9026002300B2 /* TapBarView */,
+				54A18A621F9D9026002300B2 /* TapViewControllers */,
+			);
+			path = CLTapView;
+			sourceTree = "<group>";
+		};
+		54A18A511F9D9026002300B2 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A521F9D9026002300B2 /* UIColor+TDHex.h */,
+				54A18A531F9D9026002300B2 /* UIColor+TDHex.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		54A18A541F9D9026002300B2 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A551F9D9026002300B2 /* CLTapBarCommons.h */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		54A18A561F9D9026002300B2 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A571F9D9026002300B2 /* CLTapBarViewDelegate.h */,
+				54A18A581F9D9026002300B2 /* CLTapViewControllerProtocol.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		54A18A591F9D9026002300B2 /* TapBarView */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A5A1F9D9026002300B2 /* CLTabBarButtonItem.h */,
+				54A18A5B1F9D9026002300B2 /* CLTabBarButtonItem.m */,
+				54A18A5C1F9D9026002300B2 /* CLTapBarButtonItemModel.h */,
+				54A18A5D1F9D9026002300B2 /* CLTapBarButtonItemModel.m */,
+				54A18A5E1F9D9026002300B2 /* CLTapBarItem.h */,
+				54A18A5F1F9D9026002300B2 /* CLTapBarItem.m */,
+				54A18A601F9D9026002300B2 /* CLTapBarView.h */,
+				54A18A611F9D9026002300B2 /* CLTapBarView.m */,
+			);
+			path = TapBarView;
+			sourceTree = "<group>";
+		};
+		54A18A621F9D9026002300B2 /* TapViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A631F9D9026002300B2 /* CLTapViewController.h */,
+				54A18A641F9D9026002300B2 /* CLTapViewController.m */,
+			);
+			path = TapViewControllers;
+			sourceTree = "<group>";
+		};
+		54A18A651F9D9026002300B2 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		54A18A661F9D9026002300B2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				54A18A671F9D9026002300B2 /* language.strings */,
+				54198F511F9DF2980092579B /* Images.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		79E4724CEBC6A54B2664C058 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F673BAF57EF29CE8D08B694 /* Pods-JXApi.debug.xcconfig */,
+				1D5A108B450C26CAAB5F4D42 /* Pods-JXApi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ED53E6EAC337759A43FEA484 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F648024B716A77A1AB1D8372 /* Pods_JXApi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		549E31E81F90B3EA009CBDE6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54A18AC51F9D9026002300B2 /* CLTapBarView.h in Headers */,
+				54A18AD01F9D9083002300B2 /* JXApiHeader.h in Headers */,
+				54A18A821F9D9026002300B2 /* TDActivityResponse.h in Headers */,
+				54A18A861F9D9026002300B2 /* TDLiveInfoResponse.h in Headers */,
+				54A18AAA1F9D9026002300B2 /* TDLiveInfoModel.h in Headers */,
+				54A18A7C1F9D9026002300B2 /* TDLiveInfoRequest.h in Headers */,
+				54A18ABF1F9D9026002300B2 /* CLTabBarButtonItem.h in Headers */,
+				54A18ABC1F9D9026002300B2 /* CLTapBarCommons.h in Headers */,
+				54A18A911F9D9026002300B2 /* TDHttpManager.h in Headers */,
+				54A18A731F9D9026002300B2 /* TDJXSourceFile.pch in Headers */,
+				54A18A741F9D9026002300B2 /* TDBaseViewController.h in Headers */,
+				54A18AB71F9D9026002300B2 /* TDLiveIntroViewModel.h in Headers */,
+				54A18AB01F9D9026002300B2 /* TDLiveInfoViewModel.h in Headers */,
+				54A18A991F9D9026002300B2 /* TDLiveVideoChatRoomController.h in Headers */,
+				54A18AAE1F9D9026002300B2 /* TDActivityInfoViewModel.h in Headers */,
+				54A18A9D1F9D9026002300B2 /* TDLiveDynamicModel.h in Headers */,
+				54A18A8B1F9D9026002300B2 /* TDHttpResponseType.h in Headers */,
+				54A18A8C1F9D9026002300B2 /* TDCommonClient.h in Headers */,
+				54A18AC11F9D9026002300B2 /* CLTapBarButtonItemModel.h in Headers */,
+				54A18AB41F9D9026002300B2 /* TDLiveVideoIntroController.h in Headers */,
+				54A18AC31F9D9026002300B2 /* CLTapBarItem.h in Headers */,
+				54A18A9F1F9D9026002300B2 /* TDLiveVideoDynamicController.h in Headers */,
+				54A18A8F1F9D9026002300B2 /* TDHttpEncoding.h in Headers */,
+				54A18A761F9D9026002300B2 /* NSString+TDTextSize.h in Headers */,
+				54A18A891F9D9026002300B2 /* TDHttpResponseHandler.h in Headers */,
+				54A18AAC1F9D9026002300B2 /* TDLiveVideoViewController.h in Headers */,
+				54A18A841F9D9026002300B2 /* TDGetChatListResponse.h in Headers */,
+				54A18A971F9D9026002300B2 /* TDChatRoomTextCell.h in Headers */,
+				54A18A801F9D9026002300B2 /* TDThroughViewRequest.h in Headers */,
+				54A18ABA1F9D9026002300B2 /* UIColor+TDHex.h in Headers */,
+				54A18A931F9D9026002300B2 /* TDLiveChatRoomChatListModel.h in Headers */,
+				54A18AA61F9D9026002300B2 /* TDActivityInterModel.h in Headers */,
+				54A18AA21F9D9026002300B2 /* TDLiveDynamicViewModel.h in Headers */,
+				54A18AB21F9D9026002300B2 /* TDLiveIntroModel.h in Headers */,
+				54A18A9B1F9D9026002300B2 /* TDLiveChatRoomViewModel.h in Headers */,
+				54A18ABE1F9D9026002300B2 /* CLTapViewControllerProtocol.h in Headers */,
+				54A18A881F9D9026002300B2 /* TDHttpRequestType.h in Headers */,
+				54A18A7E1F9D9026002300B2 /* TDSendMessageRequest.h in Headers */,
+				549E31FC1F90B3EB009CBDE6 /* JXApi.h in Headers */,
+				54A18AA81F9D9026002300B2 /* TDActivityNarrModel.h in Headers */,
+				54A18A781F9D9026002300B2 /* TDActivityInfoRequest.h in Headers */,
+				54A18A951F9D9026002300B2 /* TDLiveChatRoomModel.h in Headers */,
+				54A18AA41F9D9026002300B2 /* TDActivityInfoModel.h in Headers */,
+				54A18AB91F9D9026002300B2 /* TDCommon.h in Headers */,
+				54A18AC71F9D9026002300B2 /* CLTapViewController.h in Headers */,
+				54A18A8E1F9D9026002300B2 /* TDHttpCommonHeader.h in Headers */,
+				54A18ABD1F9D9026002300B2 /* CLTapBarViewDelegate.h in Headers */,
+				54A18A7A1F9D9026002300B2 /* TDGetChatListRequest.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		549E31EA1F90B3EA009CBDE6 /* JXApi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 549E31FF1F90B3EB009CBDE6 /* Build configuration list for PBXNativeTarget "JXApi" */;
+			buildPhases = (
+				D098B7ACE8B27FA00123890E /* [CP] Check Pods Manifest.lock */,
+				549E31E61F90B3EA009CBDE6 /* Sources */,
+				549E31E71F90B3EA009CBDE6 /* Frameworks */,
+				549E31E81F90B3EA009CBDE6 /* Headers */,
+				549E31E91F90B3EA009CBDE6 /* Resources */,
+				D6859B6E1C331CF31A1E9FEE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JXApi;
+			productName = JXApi;
+			productReference = 549E31EB1F90B3EA009CBDE6 /* JXApi.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		549E31F31F90B3EB009CBDE6 /* JXApiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 549E32021F90B3EB009CBDE6 /* Build configuration list for PBXNativeTarget "JXApiTests" */;
+			buildPhases = (
+				549E31F01F90B3EB009CBDE6 /* Sources */,
+				549E31F11F90B3EB009CBDE6 /* Frameworks */,
+				549E31F21F90B3EB009CBDE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				549E31F71F90B3EB009CBDE6 /* PBXTargetDependency */,
+			);
+			name = JXApiTests;
+			productName = JXApiTests;
+			productReference = 549E31F41F90B3EB009CBDE6 /* JXApiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		549E31E21F90B3EA009CBDE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = tidemedia;
+				TargetAttributes = {
+					549E31EA1F90B3EA009CBDE6 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					549E31F31F90B3EB009CBDE6 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 549E31E51F90B3EA009CBDE6 /* Build configuration list for PBXProject "JXApi" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 549E31E11F90B3EA009CBDE6;
+			productRefGroup = 549E31EC1F90B3EA009CBDE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				549E31EA1F90B3EA009CBDE6 /* JXApi */,
+				549E31F31F90B3EB009CBDE6 /* JXApiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		549E31E91F90B3EA009CBDE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54A18AC91F9D9026002300B2 /* language.strings in Resources */,
+				54198F521F9DF2980092579B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		549E31F21F90B3EB009CBDE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D098B7ACE8B27FA00123890E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D6859B6E1C331CF31A1E9FEE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JXApi/Pods-JXApi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		549E31E61F90B3EA009CBDE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54A18A9C1F9D9026002300B2 /* TDLiveChatRoomViewModel.m in Sources */,
+				54A18AA71F9D9026002300B2 /* TDActivityInterModel.m in Sources */,
+				54A18ABB1F9D9026002300B2 /* UIColor+TDHex.m in Sources */,
+				54A18AB51F9D9026002300B2 /* TDLiveVideoIntroController.m in Sources */,
+				54A18A871F9D9026002300B2 /* TDLiveInfoResponse.m in Sources */,
+				54A18A851F9D9026002300B2 /* TDGetChatListResponse.m in Sources */,
+				54A18A811F9D9026002300B2 /* TDThroughViewRequest.m in Sources */,
+				54A18A791F9D9026002300B2 /* TDActivityInfoRequest.m in Sources */,
+				54A18A981F9D9026002300B2 /* TDChatRoomTextCell.m in Sources */,
+				54A18AAB1F9D9026002300B2 /* TDLiveInfoModel.m in Sources */,
+				54A18A751F9D9026002300B2 /* TDBaseViewController.m in Sources */,
+				54A18A831F9D9026002300B2 /* TDActivityResponse.m in Sources */,
+				54A18AA91F9D9026002300B2 /* TDActivityNarrModel.m in Sources */,
+				54A18A961F9D9026002300B2 /* TDLiveChatRoomModel.m in Sources */,
+				54A18A7D1F9D9026002300B2 /* TDLiveInfoRequest.m in Sources */,
+				54A18A921F9D9026002300B2 /* TDHttpManager.m in Sources */,
+				54A18A8D1F9D9026002300B2 /* TDCommonClient.m in Sources */,
+				54A18AC01F9D9026002300B2 /* CLTabBarButtonItem.m in Sources */,
+				54A18A7F1F9D9026002300B2 /* TDSendMessageRequest.m in Sources */,
+				54A18AD11F9D9083002300B2 /* JXApiHeader.m in Sources */,
+				54A18AB81F9D9026002300B2 /* TDLiveIntroViewModel.m in Sources */,
+				54A18A901F9D9026002300B2 /* TDHttpEncoding.m in Sources */,
+				54A18AC81F9D9026002300B2 /* CLTapViewController.m in Sources */,
+				54A18AAF1F9D9026002300B2 /* TDActivityInfoViewModel.m in Sources */,
+				54A18A8A1F9D9026002300B2 /* TDHttpResponseHandler.m in Sources */,
+				54A18AC21F9D9026002300B2 /* CLTapBarButtonItemModel.m in Sources */,
+				54A18AA01F9D9026002300B2 /* TDLiveVideoDynamicController.m in Sources */,
+				54A18AC41F9D9026002300B2 /* CLTapBarItem.m in Sources */,
+				54A18A7B1F9D9026002300B2 /* TDGetChatListRequest.m in Sources */,
+				54A18A941F9D9026002300B2 /* TDLiveChatRoomChatListModel.m in Sources */,
+				54A18A9E1F9D9026002300B2 /* TDLiveDynamicModel.m in Sources */,
+				54A18AAD1F9D9026002300B2 /* TDLiveVideoViewController.m in Sources */,
+				54A18AB31F9D9026002300B2 /* TDLiveIntroModel.m in Sources */,
+				54A18A9A1F9D9026002300B2 /* TDLiveVideoChatRoomController.m in Sources */,
+				54A18AC61F9D9026002300B2 /* CLTapBarView.m in Sources */,
+				54A18AA31F9D9026002300B2 /* TDLiveDynamicViewModel.m in Sources */,
+				54A18A771F9D9026002300B2 /* NSString+TDTextSize.m in Sources */,
+				54A18AB11F9D9026002300B2 /* TDLiveInfoViewModel.m in Sources */,
+				54A18AA51F9D9026002300B2 /* TDActivityInfoModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		549E31F01F90B3EB009CBDE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				549E31FA1F90B3EB009CBDE6 /* JXApiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		549E31F71F90B3EB009CBDE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 549E31EA1F90B3EA009CBDE6 /* JXApi */;
+			targetProxy = 549E31F61F90B3EB009CBDE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		54A18A671F9D9026002300B2 /* language.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				54A18A681F9D9026002300B2 /* Base */,
+				54A18A6D1F9D9026002300B2 /* en */,
+				54A18A6E1F9D9026002300B2 /* zh-Hans */,
+			);
+			name = language.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		549E31FD1F90B3EB009CBDE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		549E31FE1F90B3EB009CBDE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		549E32001F90B3EB009CBDE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F673BAF57EF29CE8D08B694 /* Pods-JXApi.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = J45R7ZYGYH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = JXApi/Support/TDJXSourceFile.pch;
+				INFOPLIST_FILE = JXApi/Support/Info.plist;
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"Masonry\"",
+					"-framework",
+					"\"Reachability\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-Objc",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CL.JXApi;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		549E32011F90B3EB009CBDE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D5A108B450C26CAAB5F4D42 /* Pods-JXApi.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = J45R7ZYGYH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = JXApi/Support/TDJXSourceFile.pch;
+				INFOPLIST_FILE = JXApi/Support/Info.plist;
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"Masonry\"",
+					"-framework",
+					"\"Reachability\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-Objc",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CL.JXApi;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		549E32031F90B3EB009CBDE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J45R7ZYGYH;
+				INFOPLIST_FILE = JXApiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CL.JXApiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		549E32041F90B3EB009CBDE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J45R7ZYGYH;
+				INFOPLIST_FILE = JXApiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CL.JXApiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		549E31E51F90B3EA009CBDE6 /* Build configuration list for PBXProject "JXApi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				549E31FD1F90B3EB009CBDE6 /* Debug */,
+				549E31FE1F90B3EB009CBDE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		549E31FF1F90B3EB009CBDE6 /* Build configuration list for PBXNativeTarget "JXApi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				549E32001F90B3EB009CBDE6 /* Debug */,
+				549E32011F90B3EB009CBDE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		549E32021F90B3EB009CBDE6 /* Build configuration list for PBXNativeTarget "JXApiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				549E32031F90B3EB009CBDE6 /* Debug */,
+				549E32041F90B3EB009CBDE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 549E31E21F90B3EA009CBDE6 /* Project object */;
+}
