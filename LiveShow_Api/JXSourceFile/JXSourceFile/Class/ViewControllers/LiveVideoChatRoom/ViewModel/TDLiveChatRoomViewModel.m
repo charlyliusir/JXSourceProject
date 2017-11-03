@@ -177,7 +177,7 @@
             }
         }
     } onFailure:^(NSError *error) {
-        handler(NO, TDLocalizedStringWithComment(@"td_http_net_error", @"网络请求失败!"));
+        handler(NO, @"网络请求失败!");
     }];
 }
 

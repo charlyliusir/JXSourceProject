@@ -47,7 +47,7 @@
 - (void)setFailureStatus
 {
     _statusCode = TDHttpStatusFailure;
-    _message    = TDLocalizedStringWithComment(@"td_http_net_error", @"网络请求失败!");
+    _message    = @"网络请求失败!";
     _result     = nil;
 }
 

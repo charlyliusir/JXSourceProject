@@ -554,7 +554,7 @@ static NSUInteger const kTDSendMessageHeight = 56;
 - (CLTapBarItem *)dynamicItem
 {
     if (!_dynamicItem) {
-        _dynamicItem = [[CLTapBarItem alloc] initWithTitle:TDLocalizedStringWithComment(@"live_info_tapbar_item_dynamic", @"动态") controller:[TDLiveVideoDynamicController liveVideoDynamicControllerWithSourceId:_sourceId type:_sourceType]];
+        _dynamicItem = [[CLTapBarItem alloc] initWithTitle:@"动态" controller:[TDLiveVideoDynamicController liveVideoDynamicControllerWithSourceId:_sourceId type:_sourceType]];
     }
     return _dynamicItem;
 }
@@ -571,7 +571,7 @@ static NSUInteger const kTDSendMessageHeight = 56;
         [chatRoomVC addDraggingTarget:self action:@selector(onClickTapAction:)];
         [chatRoomVC setChatItemView:self.chatItemView];
         [chatRoomVC setSendMessageTextview:self.sendMessageTextview];
-        _chatItem = [[CLTapBarItem alloc] initWithTitle:TDLocalizedStringWithComment(@"live_info_tapbar_item_chat", @"聊天室") controller:chatRoomVC];
+        _chatItem = [[CLTapBarItem alloc] initWithTitle:@"聊天室" controller:chatRoomVC];
     }
     return _chatItem;
 }
@@ -584,7 +584,7 @@ static NSUInteger const kTDSendMessageHeight = 56;
 - (CLTapBarItem *)introItem
 {
     if (!_introItem) {
-        _introItem = [[CLTapBarItem alloc] initWithTitle:TDLocalizedStringWithComment(@"live_info_tapbar_item_intro", @"介绍") controller:[[TDLiveVideoIntroController alloc] init]];
+        _introItem = [[CLTapBarItem alloc] initWithTitle:@"介绍" controller:[[TDLiveVideoIntroController alloc] init]];
     }
     return _introItem;
 }
