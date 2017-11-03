@@ -25,7 +25,9 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)goAction:(id)sender {
-     [[JXApiHeader manager] loadLiveActivity:3412 sourceType:0 withBaseViewController:self];
+    //2655 有片段
+    //3412
+    [[JXApiHeader manager] loadLiveActivity:2655 sourceType:0 withBaseViewController:self];
 }
 
 /*

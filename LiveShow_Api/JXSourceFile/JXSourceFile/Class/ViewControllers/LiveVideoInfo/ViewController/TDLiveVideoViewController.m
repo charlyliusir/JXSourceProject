@@ -11,10 +11,12 @@
 #import "CLTapBarItem.h"
 
 #import "TDActivityInfoViewModel.h"
+#import "TDLiveVideoViewModel.h"
 #import "TDSendMessageRequest.h"
 
 #import "TDLiveSuspendView.h"
 #import "TDLiveVideoTopView.h"
+#import "TDLiveClipView.h"
 #import "TDChatRoomSendMessageTextView.h"
 
 #import "TDLiveVideoDynamicController.h"
@@ -24,8 +26,9 @@
 
 static NSUInteger const kTDSendMessageHeight = 56;
 
-@interface TDLiveVideoViewController ()
+@interface TDLiveVideoViewController () <UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) TDLiveVideoTopView *topView;
+@property (nonatomic, strong) TDLiveClipView *clipView;
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) CLTapBarItem *dynamicItem;
 @property (nonatomic, strong) CLTapBarItem *chatItem;
@@ -38,6 +41,7 @@ static NSUInteger const kTDSendMessageHeight = 56;
 @property (nonatomic, strong) TDLiveSuspendItemView *darwItemView;
 @property (nonatomic, strong) TDChatRoomSendMessageTextView *sendMessageTextview;
 @property (nonatomic, strong) TDActivityInfoViewModel *viewmodel;
+@property (nonatomic, strong) TDLiveVideoViewModel *videoViewModel;
 
 @property (nonatomic, strong) NSMutableArray *itemLists;
 @property (nonatomic, strong) NSMutableArray *suspendItemLists;
@@ -85,16 +89,22 @@ static NSUInteger const kTDSendMessageHeight = 56;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController setNavigationBarHidden:YES];
     /// 设置背景颜色为白色
     [self.view setBackgroundColor:TDHexStringColor(@"#ffffff")];
     
     /// 添加试图
     [self.view addSubview:self.contentView];
     [self.contentView addSubview:self.topView];
+    [self.contentView addSubview:self.clipView];
     [self.contentView addSubview:self.tapViewController];
     
     /// 网络请求
@@ -109,15 +119,29 @@ static NSUInteger const kTDSendMessageHeight = 56;
 {
     [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
+#pragma mark - private method
 - (void)loadData
 {
-    /// 网络加载活动详情
+    /// 请求组件相关信息
     [self.viewmodel getActivityInfo:^(BOOL success, NSString *message) {
         if (success) {
             /// 网络请求成功, 根据详情信息布局
             [self initUI];
+        }
+        else {
+            /// 错误提示
+            NSLog(@"请求失败---%@", message);
+        }
+    } withSourceId:_sourceId];
+    
+    /// 请求视频相关信息
+    [self.videoViewModel getVideoInfo:^(BOOL success, NSString *message) {
+        if (success) {
+            /// 网络请求成功, 根据详情信息布局
+            [self initVideoUI];
         }
         else {
             /// 错误提示
@@ -149,9 +173,21 @@ static NSUInteger const kTDSendMessageHeight = 56;
     if (_viewmodel.showLuck) {
         [self.suspendItemLists addObject:self.darwItemView];
     }
+    /// 如果需要展示片段, 添加时间监听回调
+    if (_viewmodel.showDispaly) {
+        __weak typeof(self)weakSelf = self;
+        [self.tapViewController setHandler:^(BOOL hidden) {
+            __strong typeof(weakSelf)strongSelf = weakSelf;
+            /// 展示或者隐藏片段
+            [strongSelf showClipViewUI:!hidden];
+        }];
+    }
+    [self.topView setActivityViewmodel:_viewmodel];
+    [self showClipViewUI:[_viewmodel showDispaly]];
     /// 动态布局互动组件模块
     [self.itemLists addObject:self.introItem];
     [self.tapViewController setBarItems:self.itemLists];
+    [self.tapViewController setOtherButtonHidden:![_viewmodel showDispaly]];
     [self.liveSuspendView setItems:self.suspendItemLists];
     [self.contentView addSubview:self.liveSuspendView];
     
@@ -169,6 +205,11 @@ static NSUInteger const kTDSendMessageHeight = 56;
     [self setupGestureRecognizer];
 }
 
+- (void)initVideoUI
+{
+    [self.clipView setSourcess:self.videoViewModel.videoClips.copy];
+}
+
 - (void)setupUI
 {
     [_contentView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -178,17 +219,27 @@ static NSUInteger const kTDSendMessageHeight = 56;
         make.left.top.right.mas_equalTo(self.contentView);
         make.height.mas_equalTo(211);
     }];
+    [_tapViewController mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.mas_equalTo(self.contentView);
+        make.top.mas_equalTo(_clipView.mas_bottom);
+    }];
+    [_clipView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(self.contentView);
+        make.top.mas_equalTo(_topView.mas_bottom);
+        make.height.mas_equalTo(0);
+    }];
+    
+    [self.itemLists addObject:self.introItem];
+    [self.tapViewController setBarItems:self.itemLists];
+    
+    [_topView.playButton addTarget:self action:@selector(onClickPlayAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_topView.backButton addTarget:self action:@selector(onBackAction:) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 - (void)initsetupUI
 {
     CGFloat paddingY = [TDLiveSuspendView paddingY];
-    [_liveSuspendView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self.contentView).mas_offset(-12);
-        make.bottom.mas_equalTo(_sendMessageTextview.mas_top).offset(-12);
-        make.width.mas_equalTo(@44);
-        make.height.mas_equalTo(@(44*_liveSuspendView.itemLists.count + (_liveSuspendView.itemLists.count - 1) * paddingY));
-    }];
     NSArray *constraints = [_sendMessageTextview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(@(kTDSendMessageHeight));
         make.left.right.mas_equalTo(self.contentView);
@@ -205,6 +256,23 @@ static NSUInteger const kTDSendMessageHeight = 56;
     self.sendMessageTextview.textView.textHeightChangedBlock = ^(NSString *text, CGFloat textHeight) {
         weakSelf.containerHCons.constant = textHeight + 20.0;
     };
+    
+    [_liveSuspendView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(self.contentView).mas_offset(-12);
+        make.bottom.mas_equalTo(_sendMessageTextview.mas_top).offset(-12);
+        make.width.mas_equalTo(@44);
+        make.height.mas_equalTo(@(44*_liveSuspendView.itemLists.count + (_liveSuspendView.itemLists.count - 1) * paddingY));
+    }];
+}
+
+- (void)showClipViewUI:(BOOL)isShow
+{
+    CGFloat height = isShow ? 56: 0;
+    [_clipView setHidden:!isShow];
+    [_clipView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(height);
+    }];
+    [self.tapViewController setFrame:CGRectMake(0, 211+height, self.view.frame.size.width, self.view.frame.size.height-211-height)];
 }
 
 - (void)setupNotify
@@ -218,18 +286,7 @@ static NSUInteger const kTDSendMessageHeight = 56;
     self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickTapAction:)];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)viewWillLayoutSubviews
-{
-    [super viewWillLayoutSubviews];
-    
-    NSLog(@"");
-}
-
+#pragma mark - notify
 - (void)updateKeyBoardFrame:(NSNotification *)notification
 {
     NSDictionary *object = notification.userInfo;
@@ -245,7 +302,7 @@ static NSUInteger const kTDSendMessageHeight = 56;
     
     [UIView animateWithDuration:duration animations:^{
         CGRect rect = self.view.frame;
-        rect.origin.y = endFrame.origin.y != screenH ? -endFrame.size.height + 64 : 64;
+        rect.origin.y = endFrame.origin.y != screenH ? -endFrame.size.height : 0;
         self.view.frame = rect;
     }completion:^(BOOL finished) {
         if (!_chatItemView.isSelected) {
@@ -269,21 +326,28 @@ static NSUInteger const kTDSendMessageHeight = 56;
 
 #pragma mark - button action
 
+/// 点击播放大按钮, 进入播放器模式
 - (void)onClickPlayAction:(UIButton *)button
 {
-    /// 将播放器添加到视图中
-    [self addChildViewController:self.livePlayerController];
-    [self.view addSubview:self.livePlayerController.view];
-    [self.livePlayerController.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.topView);
-    }];
+    if (self.videoViewModel.videoClips.count > 0) {
+        /// 将播放器添加到视图中
+        [self addChildViewController:self.livePlayerController];
+        [self.view addSubview:self.livePlayerController.view];
+        [self.livePlayerController setViewmodel:self.viewmodel];
+        [self.livePlayerController setVideoViewmodel:self.videoViewModel];
+        [self.livePlayerController.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(self.topView);
+        }];
+    }
 }
 
-/**
- 点击聊天按钮
+/// 点击返回按钮
+- (void)onBackAction:(UIButton *)button
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
- @param itemView 聊天按钮
- */
+/// 点击聊天按钮
 - (void)onClickChatItemAction:(TDLiveSuspendItemView *)itemView
 {
     NSLog(@"onClickChatItemAction:");
@@ -310,13 +374,16 @@ static NSUInteger const kTDSendMessageHeight = 56;
             [self.view endEditing:YES];
         }
         else {
+            /// 隐藏发送消息输入框
             [self hideSendMessage];
         }
     }
 }
 
+/// 隐藏发送消息输入框
 - (void)hideSendMessage
 {
+    /// 移除点击手势
     [_contentView removeGestureRecognizer:self.tap];
     /// 将聊天内容置空
     [self.sendMessageTextview.textView setText:@""];
@@ -369,6 +436,18 @@ static NSUInteger const kTDSendMessageHeight = 56;
 }
 */
 
+#pragma mark - collection delegate
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    TDLiveClipsViewModel *viewmodel = self.clipView.sources[indexPath.row];
+    return CGSizeMake([viewmodel cellWidth], 40);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
 /**
  活动详情业务视图模型
  
@@ -383,22 +462,48 @@ static NSUInteger const kTDSendMessageHeight = 56;
     return _viewmodel;
 }
 
+- (TDLiveVideoViewModel *)videoViewModel
+{
+    if (!_videoViewModel) {
+        _videoViewModel = [[TDLiveVideoViewModel alloc] init];
+    }
+    return _videoViewModel;
+}
+
 - (TDLivePlayerViewController *)livePlayerController
 {
     if (!_livePlayerController) {
-        _livePlayerController = [[TDLivePlayerViewController alloc] initWithVideoUrlString:@"rtmp://live.hkstv.hk.lxdns.com/live/hks"];
-        _livePlayerController.viewmodel = self.viewmodel;
+//        _livePlayerController = [[TDLivePlayerViewController alloc] initWithVideoUrlString:@"rtmp://live.hkstv.hk.lxdns.com/live/hks"];
+        _livePlayerController = [[TDLivePlayerViewController alloc] init];
     }
     return _livePlayerController;
 }
 
+/**
+ 顶部播放器视图
+
+ @return 视图
+ */
 - (TDLiveVideoTopView *)topView
 {
     if (!_topView) {
         _topView = [[TDLiveVideoTopView alloc] initWithFrame:CGRectZero];
-        [_topView.playButton addTarget:self action:@selector(onClickPlayAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _topView;
+}
+
+
+/**
+ 显示片段的视图
+
+ @return 视图
+ */
+- (TDLiveClipView *)clipView
+{
+    if (!_clipView) {
+        _clipView = [[TDLiveClipView alloc] initWithDelegate:self];
+    }
+    return _clipView;
 }
 
 /**
@@ -493,8 +598,6 @@ static NSUInteger const kTDSendMessageHeight = 56;
 {
     if (!_tapViewController) {
         _tapViewController = [[CLTapViewController alloc] initWithFrame:CGRectMake(0, 211, self.view.frame.size.width, self.view.frame.size.height-211)];
-        [self.itemLists addObject:self.introItem];
-        [self.tapViewController setBarItems:self.itemLists];
     }
     return _tapViewController;
 }

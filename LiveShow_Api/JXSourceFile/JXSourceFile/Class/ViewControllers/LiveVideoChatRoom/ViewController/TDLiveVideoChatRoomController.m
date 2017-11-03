@@ -71,7 +71,7 @@
     [_tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 10)]];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.mas_equalTo(self.view);
-        make.bottom.mas_equalTo(self.view).mas_offset(-64);
+        make.bottom.mas_equalTo(self.view);
     }];
 }
 
@@ -198,7 +198,10 @@
 #pragma mark - tapViewController delegate
 /// 用来更新 UI 界面
 - (void)didUpdateViewUI
-{}
+{
+    NSLog(@"%@", self.view);
+    NSLog(@"%@", self.tableView);
+}
 
 /// 滚动并将要显示界面, 可进行操作
 - (void)willCanLoadData:(BOOL)isLoading

@@ -88,8 +88,19 @@
         [self setBackgroundColor:[UIColor whiteColor]];
         [self addSubview:self.tapBarView];
         [self addSubview:self.scrollView];
+        [self.tapBarView.showView addTarget:self action:@selector(onClickOtherButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
+}
+
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    CGFloat originY = CGRectGetMaxY(self.tapBarView.frame);
+    UIViewController *lastViewController = [self.viewcontrollers lastObject];
+    
+    [_scrollView setFrame:CGRectMake(0, originY, CLTapBarViewWidth, CLTapBarViewHeight - originY)];
+    [_scrollView setContentSize:CGSizeMake(CGRectGetMaxX(lastViewController.view.frame), CLTapBarViewHeight - originY)];
 }
 
 - (void)layoutSubviews
@@ -98,6 +109,26 @@
     CGRect bounds   = self.bounds;
     bounds.origin.y = 0;
     self.bounds     = bounds;
+}
+
+- (void)setOtherButtonHidden:(BOOL)hidden
+{
+    if (_tapBarView && _tapBarView.showView) {
+        [_tapBarView.showView setHidden:hidden];
+    }
+}
+
+- (void)setHandler:(onClickOtherButtonHandler)handler
+{
+    _handler = handler;
+}
+
+- (void)onClickOtherButtonAction:(UIButton *)button
+{
+    [button setSelected:!button.isSelected];
+    if (_handler) {
+        _handler(!button.selected);
+    }
 }
 
 /*

@@ -65,6 +65,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.view setBackgroundColor:[UIColor blackColor]];
     
     [self addObservers];
     [self addNotification];
@@ -100,9 +101,10 @@
 #pragma mark - 初始化播放器
 - (void)setupPlayer {
     //初始化播放器并设置播放地址
-    self.player = [[KSYMoviePlayerController alloc] initWithContentURL: _reloadUrl fileList:nil sharegroup:nil];
+    self.player = [[KSYMoviePlayerController alloc] init];
     [self setupObservers:_player];
     _player.controlStyle = MPMovieControlStyleNone;
+    [_player.view setBackgroundColor:[UIColor blackColor]];
     [self.view addSubview:_player.view];
     [_player.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -123,7 +125,7 @@
     NSKeyValueObservingOptions opts = NSKeyValueObservingOptionNew;
     [_player addObserver:self forKeyPath:@"currentPlaybackTime" options:opts context:nil];
     self.prepared_time = (long long int)([[NSDate date] timeIntervalSince1970] * 1000);
-    [_player prepareToPlay];
+//    [_player prepareToPlay];
 }
 
 - (void)registerObserver:(NSString *)notification player:(KSYMoviePlayerController*)player {

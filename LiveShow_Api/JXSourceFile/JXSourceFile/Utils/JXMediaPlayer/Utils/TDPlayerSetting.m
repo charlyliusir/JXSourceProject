@@ -18,7 +18,7 @@
     settingModel.bufferSizeMax = 15;
     settingModel.preparetimeOut = 10;
     settingModel.readtimeOut = 30;
-    settingModel.shouldLoop = YES;
+    settingModel.shouldLoop = NO;
     settingModel.shouldAutoplay = NO;
     settingModel.recording = NO;
     settingModel.showDebugLog = NO;

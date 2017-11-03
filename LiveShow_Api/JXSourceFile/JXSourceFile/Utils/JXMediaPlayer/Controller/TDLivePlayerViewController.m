@@ -8,6 +8,7 @@
 
 #import "TDLivePlayerViewController.h"
 #import "TDLiveControlView.h"
+#import "TDLiveClipsViewModel.h"
 
 
 @interface TDLivePlayerViewController ()
@@ -18,18 +19,6 @@
 @end
 
 @implementation TDLivePlayerViewController
-
-- (TDLiveControlView *)controlView
-{
-    if (!_controlView) {
-        _controlView = [[TDLiveControlView alloc] initWithFrame:CGRectZero];
-        [_controlView.backButton addTarget:self action:@selector(onClickLiveBackAction:) forControlEvents:UIControlEventTouchUpInside];
-        [_controlView.livePlayButton addTarget:self action:@selector(onClickLivePlayAction:) forControlEvents:UIControlEventTouchUpInside];
-        [_controlView.fullScreenButton addTarget:self action:@selector(onClickFullScreenAction:) forControlEvents:UIControlEventTouchUpInside];
-        [_controlView.liveSlider addTarget:self action:@selector(playSliderUpdateValue:) forControlEvents:UIControlEventValueChanged];
-    }
-    return _controlView;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -134,5 +123,32 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (TDLiveControlView *)controlView
+{
+    if (!_controlView) {
+        _controlView = [[TDLiveControlView alloc] initWithFrame:CGRectZero];
+        [_controlView.backButton addTarget:self action:@selector(onClickLiveBackAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_controlView.livePlayButton addTarget:self action:@selector(onClickLivePlayAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_controlView.fullScreenButton addTarget:self action:@selector(onClickFullScreenAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_controlView.liveSlider addTarget:self action:@selector(playSliderUpdateValue:) forControlEvents:UIControlEventValueChanged];
+    }
+    return _controlView;
+}
+
+- (void)setViewmodel:(TDActivityInfoViewModel *)viewmodel
+{
+    _viewmodel = viewmodel;
+    [self.controlView.backButton setTitle:[NSString stringWithFormat:@"< %@", _viewmodel.model.title] forState:UIControlStateNormal];
+}
+
+- (void)setVideoViewmodel:(TDLiveVideoViewModel *)videoViewmodel
+{
+    _videoViewmodel = videoViewmodel;
+    if (_videoViewmodel.videoClips.count > 0) {
+        TDLiveClipsViewModel *viewmodel = _videoViewmodel.videoClips[0];
+        [self reload:[NSURL URLWithString:viewmodel.model.url]];
+    }
+}
 
 @end

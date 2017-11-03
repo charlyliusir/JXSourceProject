@@ -45,7 +45,7 @@
 {
     if (!_backButton) {
         _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_backButton setTitle:@"< 重庆火锅重庆火锅重庆火锅" forState:UIControlStateNormal];
+        [_backButton setTitle:@"< " forState:UIControlStateNormal];
         [_backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     }
     return _backButton;
@@ -75,8 +75,7 @@
 {
     if (!_liveMoreButton) {
         _liveMoreButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_liveMoreButton setTitle:@"更多" forState:UIControlStateNormal];
-        [_liveMoreButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_liveMoreButton setImage:[UIImage imageNamed:@"td_player_share"] forState:UIControlStateNormal];
     }
     return _liveMoreButton;
 }

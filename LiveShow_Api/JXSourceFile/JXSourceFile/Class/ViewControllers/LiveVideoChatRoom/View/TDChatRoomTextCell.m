@@ -88,7 +88,8 @@
         make.right.mas_lessThanOrEqualTo(self.contentView).mas_offset(-TD_ChatRoom_ChatContent_Max_Margin_X);
         make.right.mas_greaterThanOrEqualTo(_chatContentLabel).mas_offset(TD_ChatRoom_Margin_Y);
         make.right.mas_greaterThanOrEqualTo(_nextLevelContentView).mas_offset(TD_ChatRoom_Margin_Y);
-        make.bottom.mas_equalTo(self.contentView);
+//        make.bottom.mas_equalTo(self.contentView);
+        make.bottom.mas_equalTo(_chatContentLabel).mas_offset(TD_ChatRoom_Margin_Y);
     }];
     
     [_chatContentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -155,8 +156,10 @@
 - (UIImageView *)chatContentView
 {
     if (!_chatContentView) {
-        _chatContentView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"td_chat_bubble"]];
-        [_chatContentView setBackgroundColor:TDHexStringColor(@"#f4f5f6")];
+        
+        _chatContentView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"td_chat_bubble"] stretchableImageWithLeftCapWidth:5 topCapHeight:20]];
+        [_chatContentView setContentMode:UIViewContentModeScaleToFill];
+//        [_chatContentView setBackgroundColor:TDHexStringColor(@"#f4f5f6")];
     }
     return _chatContentView;
 }

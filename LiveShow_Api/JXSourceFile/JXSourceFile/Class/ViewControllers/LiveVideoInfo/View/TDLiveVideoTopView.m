@@ -9,11 +9,58 @@
 #import "TDLiveVideoTopView.h"
 
 @interface TDLiveVideoTopView ()
+/// 顶部工具条容器视图
+@property (nonatomic, strong) UIView *topBarView;
+@property (nonatomic, strong) UIButton *backButton;
+@property (nonatomic, strong) UILabel  *titleLabel;
+@property (nonatomic, strong) UIButton *liveMoreButton;
 @property (nonatomic, strong) UIImageView *bgImageView;
 @property (nonatomic, strong) UIButton *playButton;
 @end
 
 @implementation TDLiveVideoTopView
+
+- (UIButton *)backButton
+{
+    if (!_backButton) {
+        _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_backButton setImage:[UIImage imageNamed:@"td_back_icon"] forState:UIControlStateNormal];
+        [_backButton setContentEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 5)];
+    }
+    return _backButton;
+}
+
+- (UILabel *)titleLabel
+{
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        [_titleLabel setText:@""];
+        [_titleLabel setFont:TDFontSize(17)];
+        [_titleLabel setTextColor:TDHexStringColor(@"#ffffff")];
+    }
+    return _titleLabel;
+}
+
+- (UIButton *)liveMoreButton
+{
+    if (!_liveMoreButton) {
+        _liveMoreButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_liveMoreButton setImage:[UIImage imageNamed:@"td_player_share"] forState:UIControlStateNormal];
+    }
+    return _liveMoreButton;
+}
+
+- (UIView *)topBarView
+{
+    if (!_topBarView) {
+        _topBarView = [[UIView alloc] initWithFrame:CGRectZero];
+        [_topBarView setBackgroundColor:[UIColor clearColor]];
+        [_topBarView addSubview:self.backButton];
+        [_topBarView addSubview:self.titleLabel];
+//        [_topBarView addSubview:self.liveMoreButton];
+    }
+    return _topBarView;
+}
 
 - (UIImageView *)bgImageView
 {
@@ -42,6 +89,7 @@
     if (self = [super initWithFrame:frame]) {
         [self addSubview:self.bgImageView];
         [self addSubview:self.playButton];
+        [self addSubview:self.topBarView];
         [self setupUI];
     }
     return self;
@@ -49,6 +97,22 @@
 
 - (void)setupUI
 {
+    [_topBarView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.mas_equalTo(self);
+        make.height.mas_equalTo(@44);
+    }];
+    [_backButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(_topBarView).mas_offset(12);
+        make.centerY.mas_equalTo(_topBarView);
+    }];
+    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(_backButton.mas_right).offset(5);
+        make.centerY.mas_equalTo(_backButton);
+    }];
+//    [_liveMoreButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.mas_equalTo(_topBarView).offset(-12);
+//        make.centerY.mas_equalTo(_backButton);
+//    }];
     [_bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self);
     }];
@@ -64,5 +128,11 @@
  // Drawing code
  }
  */
+
+- (void)setActivityViewmodel:(TDActivityInfoViewModel *)activityViewmodel
+{
+    _activityViewmodel = activityViewmodel;
+    [_titleLabel setText:_activityViewmodel.model.title];
+}
 
 @end

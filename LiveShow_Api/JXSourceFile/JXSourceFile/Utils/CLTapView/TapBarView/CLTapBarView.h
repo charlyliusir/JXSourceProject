@@ -14,9 +14,10 @@
 @interface CLTapBarView : UIView
 
 @property (nonatomic, weak) id <CLTapBarViewDelegate> delegate;
+/// 展开按钮
+@property (nonatomic, readonly, strong) UIButton * showView;
 
 @property (nonatomic, strong) NSMutableArray * barItems;
-
 @property (nonatomic, assign) NSUInteger selectBarItem;
     
 @property (nonatomic, strong) UIColor *barTintColor;
@@ -27,5 +28,4 @@
 @property (nonatomic, strong) UIFont *barTitleTintFont;
 
 - (void)setBarItem: (CLTapBarItem *)barItem;
-
 @end

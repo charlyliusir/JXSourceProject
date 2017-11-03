@@ -17,6 +17,14 @@
 		54198F501F9DD2010092579B /* TDBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54198F4F1F9DD2010092579B /* TDBaseNavigationController.m */; };
 		54198F551F9E01FF0092579B /* TDLiveSuspendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54198F541F9E01FF0092579B /* TDLiveSuspendView.m */; };
 		54198F581F9E02440092579B /* TDLiveSuspendItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54198F571F9E02440092579B /* TDLiveSuspendItemView.m */; };
+		541B7C7D1FA32C8E00B486B4 /* TDLiveClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B7C7C1FA32C8E00B486B4 /* TDLiveClipView.m */; };
+		541B7C811FA33D8400B486B4 /* TDHelperManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B7C801FA33D8400B486B4 /* TDHelperManager.m */; };
+		541B7C841FA340A800B486B4 /* TDLiveVideoClipsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B7C821FA340A700B486B4 /* TDLiveVideoClipsRequest.m */; };
+		541B7C871FA340C100B486B4 /* TDLiveVideoClipsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B7C861FA340C100B486B4 /* TDLiveVideoClipsResponse.m */; };
+		541B7C8A1FA3417C00B486B4 /* TDLiveClipsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B7C891FA3417C00B486B4 /* TDLiveClipsModel.m */; };
+		541B7C8D1FA3418800B486B4 /* TDLiveClipsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B7C8C1FA3418800B486B4 /* TDLiveClipsViewModel.m */; };
+		541B7C901FA3421600B486B4 /* TDLiveVideoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B7C8F1FA3421600B486B4 /* TDLiveVideoViewModel.m */; };
+		5433A65E1FA6D61D004699FD /* TDLiveClipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5433A65D1FA6D61D004699FD /* TDLiveClipCell.m */; };
 		543697C51F95F04E000130FF /* TDLiveVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 543697C41F95F04E000130FF /* TDLiveVideoViewController.m */; };
 		543697CD1F96009B000130FF /* TDHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 543697CC1F96009B000130FF /* TDHttpManager.m */; };
 		543697D01F961288000130FF /* TDCommonClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 543697CF1F961288000130FF /* TDCommonClient.m */; };
@@ -113,6 +121,22 @@
 		54198F541F9E01FF0092579B /* TDLiveSuspendView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDLiveSuspendView.m; sourceTree = "<group>"; };
 		54198F561F9E02440092579B /* TDLiveSuspendItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDLiveSuspendItemView.h; sourceTree = "<group>"; };
 		54198F571F9E02440092579B /* TDLiveSuspendItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDLiveSuspendItemView.m; sourceTree = "<group>"; };
+		541B7C7B1FA32C8E00B486B4 /* TDLiveClipView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDLiveClipView.h; sourceTree = "<group>"; };
+		541B7C7C1FA32C8E00B486B4 /* TDLiveClipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDLiveClipView.m; sourceTree = "<group>"; };
+		541B7C7F1FA33D8400B486B4 /* TDHelperManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDHelperManager.h; sourceTree = "<group>"; };
+		541B7C801FA33D8400B486B4 /* TDHelperManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDHelperManager.m; sourceTree = "<group>"; };
+		541B7C821FA340A700B486B4 /* TDLiveVideoClipsRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDLiveVideoClipsRequest.m; sourceTree = "<group>"; };
+		541B7C831FA340A700B486B4 /* TDLiveVideoClipsRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDLiveVideoClipsRequest.h; sourceTree = "<group>"; };
+		541B7C851FA340C100B486B4 /* TDLiveVideoClipsResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDLiveVideoClipsResponse.h; sourceTree = "<group>"; };
+		541B7C861FA340C100B486B4 /* TDLiveVideoClipsResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDLiveVideoClipsResponse.m; sourceTree = "<group>"; };
+		541B7C881FA3417C00B486B4 /* TDLiveClipsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDLiveClipsModel.h; sourceTree = "<group>"; };
+		541B7C891FA3417C00B486B4 /* TDLiveClipsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDLiveClipsModel.m; sourceTree = "<group>"; };
+		541B7C8B1FA3418800B486B4 /* TDLiveClipsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDLiveClipsViewModel.h; sourceTree = "<group>"; };
+		541B7C8C1FA3418800B486B4 /* TDLiveClipsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDLiveClipsViewModel.m; sourceTree = "<group>"; };
+		541B7C8E1FA3421600B486B4 /* TDLiveVideoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDLiveVideoViewModel.h; sourceTree = "<group>"; };
+		541B7C8F1FA3421600B486B4 /* TDLiveVideoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDLiveVideoViewModel.m; sourceTree = "<group>"; };
+		5433A65C1FA6D61D004699FD /* TDLiveClipCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDLiveClipCell.h; sourceTree = "<group>"; };
+		5433A65D1FA6D61D004699FD /* TDLiveClipCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDLiveClipCell.m; sourceTree = "<group>"; };
 		543697C31F95F04E000130FF /* TDLiveVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDLiveVideoViewController.h; sourceTree = "<group>"; };
 		543697C41F95F04E000130FF /* TDLiveVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDLiveVideoViewController.m; sourceTree = "<group>"; };
 		543697CB1F96009B000130FF /* TDHttpManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDHttpManager.h; sourceTree = "<group>"; };
@@ -294,6 +318,15 @@
 			path = LiveInfo;
 			sourceTree = "<group>";
 		};
+		541B7C7E1FA33D6900B486B4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				541B7C7F1FA33D8400B486B4 /* TDHelperManager.h */,
+				541B7C801FA33D8400B486B4 /* TDHelperManager.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		543697D11F9613AF000130FF /* Request */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +340,8 @@
 				7C1821321F9B2CC80053DF40 /* TDSendMessageRequest.m */,
 				7C1821341F9B2CD80053DF40 /* TDGetChatListRequest.h */,
 				7C1821351F9B2CD80053DF40 /* TDGetChatListRequest.m */,
+				541B7C831FA340A700B486B4 /* TDLiveVideoClipsRequest.h */,
+				541B7C821FA340A700B486B4 /* TDLiveVideoClipsRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -320,6 +355,8 @@
 				7C1821381F9B2CE70053DF40 /* TDActivityResponse.m */,
 				7C18213D1F9B2D080053DF40 /* TDGetChatListResponse.h */,
 				7C18213E1F9B2D080053DF40 /* TDGetChatListResponse.m */,
+				541B7C851FA340C100B486B4 /* TDLiveVideoClipsResponse.h */,
+				541B7C861FA340C100B486B4 /* TDLiveVideoClipsResponse.m */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -639,6 +676,7 @@
 		54D034981F94B39F00B3C3E3 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				541B7C7E1FA33D6900B486B4 /* Utils */,
 				54D034991F94B39F00B3C3E3 /* NavigationController */,
 				54D0349C1F94B39F00B3C3E3 /* View */,
 				54D0349D1F94B39F00B3C3E3 /* ViewController */,
@@ -751,6 +789,8 @@
 				7C18214A1F9B3A8E0053DF40 /* TDActivityNarrModel.m */,
 				7C1821461F9B3A1B0053DF40 /* TDActivityInterModel.h */,
 				7C1821471F9B3A1B0053DF40 /* TDActivityInterModel.m */,
+				541B7C881FA3417C00B486B4 /* TDLiveClipsModel.h */,
+				541B7C891FA3417C00B486B4 /* TDLiveClipsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -762,6 +802,10 @@
 				540DE0391F99CE01009F2498 /* TDLiveInfoViewModel.m */,
 				7C1821431F9B37F90053DF40 /* TDActivityInfoViewModel.h */,
 				7C1821441F9B37F90053DF40 /* TDActivityInfoViewModel.m */,
+				541B7C8B1FA3418800B486B4 /* TDLiveClipsViewModel.h */,
+				541B7C8C1FA3418800B486B4 /* TDLiveClipsViewModel.m */,
+				541B7C8E1FA3421600B486B4 /* TDLiveVideoViewModel.h */,
+				541B7C8F1FA3421600B486B4 /* TDLiveVideoViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -777,6 +821,10 @@
 				54D74B2D1F9EF182000DB4C4 /* TDChatRoomSendMessageTextView.m */,
 				54CC05BD1FA17D91003CE2D9 /* TDLiveVideoTopView.h */,
 				54CC05BE1FA17D91003CE2D9 /* TDLiveVideoTopView.m */,
+				541B7C7B1FA32C8E00B486B4 /* TDLiveClipView.h */,
+				541B7C7C1FA32C8E00B486B4 /* TDLiveClipView.m */,
+				5433A65C1FA6D61D004699FD /* TDLiveClipCell.h */,
+				5433A65D1FA6D61D004699FD /* TDLiveClipCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1051,19 +1099,25 @@
 				540DE0371F99C4D3009F2498 /* TDLiveInfoResponse.m in Sources */,
 				7C1821451F9B37F90053DF40 /* TDActivityInfoViewModel.m in Sources */,
 				54D74B311F9F2846000DB4C4 /* UITextView+TDInputView.m in Sources */,
+				541B7C811FA33D8400B486B4 /* TDHelperManager.m in Sources */,
+				541B7C7D1FA32C8E00B486B4 /* TDLiveClipView.m in Sources */,
 				54198F501F9DD2010092579B /* TDBaseNavigationController.m in Sources */,
 				7C18212D1F9B2C980053DF40 /* TDActivityInfoRequest.m in Sources */,
 				546F33C81F972B8B00065903 /* TDHttpResponseHandler.m in Sources */,
+				5433A65E1FA6D61D004699FD /* TDLiveClipCell.m in Sources */,
 				543697C51F95F04E000130FF /* TDLiveVideoViewController.m in Sources */,
 				54198F4D1F9DCC5A0092579B /* JXApiHeader.m in Sources */,
 				546F33C11F9705B500065903 /* TDHttpEncoding.m in Sources */,
 				5490E8E91F99EB3400A878C2 /* TDLiveIntroModel.m in Sources */,
 				7C18214B1F9B3A8E0053DF40 /* TDActivityNarrModel.m in Sources */,
 				54F72ACA1F98598C00D8BE68 /* CLTapBarView.m in Sources */,
+				541B7C8A1FA3417C00B486B4 /* TDLiveClipsModel.m in Sources */,
 				5490E8F21F99EBAA00A878C2 /* TDLiveChatRoomViewModel.m in Sources */,
 				7C18214E1F9B54090053DF40 /* NSString+TDTextSize.m in Sources */,
 				7C1821391F9B2CE70053DF40 /* TDActivityResponse.m in Sources */,
 				5490E8F51F99ECAF00A878C2 /* TDLiveChatRoomChatListModel.m in Sources */,
+				541B7C901FA3421600B486B4 /* TDLiveVideoViewModel.m in Sources */,
+				541B7C841FA340A800B486B4 /* TDLiveVideoClipsRequest.m in Sources */,
 				543697D01F961288000130FF /* TDCommonClient.m in Sources */,
 				54198F4A1F9DCBD40092579B /* TDHomeViewController.m in Sources */,
 				7C1821331F9B2CC80053DF40 /* TDSendMessageRequest.m in Sources */,
@@ -1082,10 +1136,12 @@
 				54198F581F9E02440092579B /* TDLiveSuspendItemView.m in Sources */,
 				5490E8EC1F99EB4100A878C2 /* TDLiveIntroViewModel.m in Sources */,
 				5490E8E31F99EB0100A878C2 /* TDLiveDynamicModel.m in Sources */,
+				541B7C871FA340C100B486B4 /* TDLiveVideoClipsResponse.m in Sources */,
 				7C18213F1F9B2D080053DF40 /* TDGetChatListResponse.m in Sources */,
 				5490E8DF1F99E6CA00A878C2 /* TDLiveVideoIntroController.m in Sources */,
 				5490E8E61F99EB2700A878C2 /* TDLiveDynamicViewModel.m in Sources */,
 				54198F551F9E01FF0092579B /* TDLiveSuspendView.m in Sources */,
+				541B7C8D1FA3418800B486B4 /* TDLiveClipsViewModel.m in Sources */,
 				54D034611F94B34E00B3C3E3 /* AppDelegate.m in Sources */,
 				54CC05C71FA1B8F8003CE2D9 /* TDBaseTextField.m in Sources */,
 				7C1821421F9B37E90053DF40 /* TDActivityInfoModel.m in Sources */,

@@ -19,5 +19,7 @@
 #define TD_HTTP_REQUEST_SEND_MESSAGE @"send_message.php"
 // 评论入库
 #define TD_HTTP_REQUEST_LIST_MESSAGE @"list_message.php"
+// 视频切片
+#define TD_HTTP_REQUEST_VIDEO_CLIPS @"video_clips.php"
 
 #endif /* TDHttpCommonHeader_h */

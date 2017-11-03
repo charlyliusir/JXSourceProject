@@ -28,7 +28,7 @@
 /// 是否开启片段
 - (BOOL)showDispaly
 {
-    return [_model.display isEqualToNumber:@(1)];
+    return [_model.display isEqualToString:@"1"];
 }
 /// 是否展示动态组件
 - (BOOL)showDynamic

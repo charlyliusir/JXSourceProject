@@ -42,8 +42,8 @@
 - (UIScrollView *)scrollView
 {
     if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, CLTapBarViewWidth, CLTapBarItemHeight)];
-        _scrollView.contentSize = CGSizeMake(CLTapBarViewWidth, CLTapBarItemHeight);
+        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, CLTapBarViewWidth-48, CLTapBarItemHeight)];
+        _scrollView.contentSize = CGSizeMake(CLTapBarViewWidth-48, CLTapBarItemHeight);
     }
     return _scrollView;
 }
@@ -52,8 +52,14 @@
 {
     if (!_showView) {
         _showView = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_showView setBackgroundImage:[UIImage imageNamed:@"td_select_arrow"] forState:UIControlStateNormal];
+        [_showView setImage:[UIImage imageNamed:@"td_select_arrow"] forState:UIControlStateNormal];
+        [_showView setImage:[UIImage imageNamed:@"td_select_arrow"] forState:UIControlStateSelected];
+        [_showView setContentMode:UIViewContentModeScaleAspectFit];
+        [_showView setFrame:CGRectMake(CLTapBarViewWidth-48, 0, 48, CLTapBarItemHeight)];
+        [_showView setHidden:YES];
+        [_showView setSelected:YES];
     }
+    return _showView;
 }
 
 - (UIView *)scrollLineView
@@ -119,12 +125,12 @@
     [self setupUIBarItems];
 }
 
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
         [self setupTapBarViewConfigure];
         [self addSubview:self.scrollView];
+        [self addSubview:self.showView];
         [self.scrollView addSubview:self.scrollLineView];
         [self addSubview:self.bottomLineView];
     }

@@ -21,7 +21,7 @@
 /// 封面图
 @property (nonatomic, strong) NSString * coverpicture;
 /// 是否显示片段
-@property (nonatomic, strong) NSNumber * display;
+@property (nonatomic, strong) NSString * display;
 /// 打赏笔数
 @property (nonatomic, strong) NSNumber * reward_number;
 /// 在线人数

@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^onClickOtherButtonHandler)(BOOL hidden);
+
 @interface CLTapViewController : UIScrollView
+
+@property (nonatomic,   copy) onClickOtherButtonHandler handler;
 
 @property (nonatomic, strong) NSMutableArray * barItems;
 
 @property (nonatomic, assign) NSUInteger selectBarItem;
+
+- (void)setOtherButtonHidden:(BOOL)hidden;
 
 @end
