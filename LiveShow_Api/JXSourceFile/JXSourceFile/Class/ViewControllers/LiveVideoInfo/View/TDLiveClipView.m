@@ -95,6 +95,11 @@
     
 }
 
+- (void)reloadCollectionCellWithIndexPaths:(NSArray *)indexPaths
+{
+    [self.collection reloadItemsAtIndexPaths:indexPaths];
+}
+
 #pragma mark - collection datasource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -103,9 +108,8 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    TDLiveClipsViewModel *viewmodel = self.sources[indexPath.row];
     TDLiveClipCell *cell = (TDLiveClipCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kTDLiveClipCellIdentifier forIndexPath:indexPath];
-    [cell.titleLabel setText:viewmodel.model.title];
+    [cell setViewModel:self.sources[indexPath.row]];
     return cell;
 }
 /*
@@ -138,7 +142,6 @@
     if (!_layout) {
         _layout = [[UICollectionViewFlowLayout alloc] init];
         [_layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-//        [_layout setMinimumLineSpacing:7.5];
     }
     return _layout;
 }

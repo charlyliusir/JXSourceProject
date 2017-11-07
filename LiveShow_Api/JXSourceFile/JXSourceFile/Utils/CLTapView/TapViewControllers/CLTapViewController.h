@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CLTapBarDelegate.h"
 
 typedef void(^onClickOtherButtonHandler)(BOOL hidden);
 
 @interface CLTapViewController : UIScrollView
+
+@property (nonatomic,   weak) id <CLTapBarDelegate> tapBarDelegate;
 
 @property (nonatomic,   copy) onClickOtherButtonHandler handler;
 

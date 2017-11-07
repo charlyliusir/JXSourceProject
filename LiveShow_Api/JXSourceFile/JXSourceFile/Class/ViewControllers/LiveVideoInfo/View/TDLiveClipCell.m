@@ -47,4 +47,18 @@
     return _titleLabel;
 }
 
+- (void)setViewModel:(TDLiveClipsViewModel *)viewModel
+{
+    _viewModel = viewModel;
+    _titleLabel.text = viewModel.model.title;
+    if (viewModel.isSelected) {
+        [self setBackgroundColor:TDHexStringColor(@"#1b9ed4")];
+        [_titleLabel setTextColor:TDHexStringColor(@"#ffffff")];
+    }
+    else {
+        [self setBackgroundColor:TDHexStringColor(@"#ffffff")];
+        [_titleLabel setTextColor:TDHexStringColor(@"#222222")];
+    }
+}
+
 @end

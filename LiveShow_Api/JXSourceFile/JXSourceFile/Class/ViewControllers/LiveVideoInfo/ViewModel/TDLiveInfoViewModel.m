@@ -43,6 +43,34 @@
     }];
 }
 
+/**
+ 在线人数
 
+ @return 在线人数
+ */
+- (NSString *)onLinePeople
+{
+    if (_model && _model.online) {
+        return [NSString stringWithFormat:@"%@", _model.online];
+    }
+    else {
+        return @"0";
+    }
+}
+
+/**
+ 直播状态
+
+ @return 直播状态
+ */
+- (BOOL)living
+{
+    if (_model && _model.state) {
+        return [_model.state isEqualToNumber:@(1)];
+    }
+    else {
+        return NO;
+    }
+}
 
 @end

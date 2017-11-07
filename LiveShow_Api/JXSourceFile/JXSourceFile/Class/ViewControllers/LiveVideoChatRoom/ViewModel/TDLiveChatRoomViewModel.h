@@ -27,4 +27,5 @@
 /// 聊天信息数量
 - (NSUInteger)messageNumber;
 
+
 @end

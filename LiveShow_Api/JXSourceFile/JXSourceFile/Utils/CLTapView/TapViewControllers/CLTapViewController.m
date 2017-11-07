@@ -164,6 +164,11 @@
     id <CLTapViewControllerProtocol> protocol = self.viewcontrollers[_selectBarItem];
     [protocol willCanLoadData:protocol.isLoading];
     protocol.isLoading = YES;
+    
+    /// delegate 方法
+    if (_tapBarDelegate && [_tapBarDelegate respondsToSelector:@selector(tapBarController:didShowChildController:)]) {
+        [_tapBarDelegate tapBarController:self didShowChildController:protocol];
+    }
 }
 
 @end

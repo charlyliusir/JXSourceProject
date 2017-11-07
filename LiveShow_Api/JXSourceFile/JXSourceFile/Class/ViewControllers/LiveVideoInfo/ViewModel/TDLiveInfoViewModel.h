@@ -13,6 +13,9 @@
 
 @property (nonatomic, readonly, strong) TDLiveInfoModel *model;
 
+@property (nonatomic, readonly, strong) NSString *onLinePeople;
+@property (nonatomic, readonly, getter=isLiving, assign) BOOL living;
+
 - (instancetype)initWithModel:(TDLiveInfoModel *)model;
 + (instancetype)liveInfoWithModel:(TDLiveInfoModel *)model;
 

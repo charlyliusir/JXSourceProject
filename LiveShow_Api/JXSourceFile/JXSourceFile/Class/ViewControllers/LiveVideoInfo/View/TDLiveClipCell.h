@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TDLiveClipsViewModel.h"
 
 @interface TDLiveClipCell : UICollectionViewCell
+
+@property (nonatomic, strong) TDLiveClipsViewModel *viewModel;
+
 @property (nonatomic, readonly, strong) UILabel *titleLabel;
 @end

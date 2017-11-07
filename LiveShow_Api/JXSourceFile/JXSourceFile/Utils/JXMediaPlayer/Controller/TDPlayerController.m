@@ -168,6 +168,7 @@
 #pragma mark - public method
 
 - (void)reload:(NSURL *)aUrl {
+    _reloadUrl = aUrl;
     [_player reset:NO];
     [_player setUrl:aUrl];
     [_player prepareToPlay];
@@ -245,6 +246,7 @@
             NSLog(@"player finish");
         }else if (reason == MPMovieFinishReasonPlaybackError){
             NSLog(@"%@", [NSString stringWithFormat:@"player Error : %@", [[notify userInfo] valueForKey:@"error"]]);
+            [self reload:_reloadUrl];
         }else if (reason == MPMovieFinishReasonUserExited){
             NSLog(@"%@", [NSString stringWithFormat:@"player userExited"]);
             

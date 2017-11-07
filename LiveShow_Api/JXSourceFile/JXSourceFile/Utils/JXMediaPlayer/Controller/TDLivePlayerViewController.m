@@ -12,9 +12,12 @@
 
 
 @interface TDLivePlayerViewController ()
-
 @property (nonatomic, strong) TDLiveControlView *controlView;
+/// 返回按钮
+@property (nonatomic, strong) UIButton *backButton;
 @property (nonatomic, assign) NSTimeInterval     playedTime;
+
+@property (nonatomic, assign) BOOL isClickBackButton;
 
 @end
 
@@ -35,6 +38,13 @@
     }];
 }
 
+- (void)reload:(NSURL *)aUrl
+{
+    [super reload:aUrl];
+    [_controlView showControlUI:NO];
+    [self.controlView.activityView startAnimating];
+}
+
 #pragma mark - 通知
 -(void)handlePlayerNotify:(NSNotification*)notify
 {
@@ -43,8 +53,28 @@
     }
     if (MPMediaPlaybackIsPreparedToPlayDidChangeNotification ==  notify.name) {
         [self.controlView updateTotalPlayTime:self.player.duration];
-        if(self.player.shouldAutoplay == NO)
+        if(self.player.shouldAutoplay == NO) {
             [self.player play];
+            [_controlView showControlUI:YES];
+        }
+        [self.controlView.activityView stopAnimating];
+    }
+    else if (MPMoviePlayerPlaybackStateDidChangeNotification == notify.name) {
+        [self.controlView.livePlayButton setSelected:self.player.playbackState == MPMoviePlaybackStatePlaying];
+    }
+    else if (MPMoviePlayerLoadStateDidChangeNotification == notify.name) {
+        if (self.player.loadState == MPMovieLoadStateStalled) {
+            [self.controlView.activityView startAnimating];
+        }
+        else if (self.player.loadState == MPMovieLoadStatePlayable) {
+            [self.controlView.activityView stopAnimating];
+        }
+        else if (self.player.loadState == MPMovieLoadStatePlaythroughOK) {
+            [self.controlView.activityView stopAnimating];
+        }
+        else {
+            [self.controlView.activityView stopAnimating];
+        }
     }
     [self notifyHandler:notify];
 }
@@ -72,12 +102,11 @@
  */
 - (void)onClickLiveBackAction:(UIButton *)backButton
 {
-    if (self.fullScreen) {
-        [self onClickFullScreenAction:_controlView.fullScreenButton];
+    if (self.comeBackHandler) {
+        self.comeBackHandler(self.viewmodel, self, self.fullScreen);
     }
-    else {
-        /// 退出呀呀
-    }
+    [self setIsClickBackButton:YES];
+    [self onClickFullScreenAction:_controlView.fullScreenButton];
 }
 
 /**
@@ -98,8 +127,14 @@
 - (void)onClickFullScreenAction:(UIButton *)fullButton
 {
     [fullButton setSelected:!fullButton.isSelected];
-    [self.viewmodel fullScreenButtonClickedHandlerForVodPlayController:self isFullScreen:fullButton.selected];
+    /// 这里需要价格判断
+    if (!_isClickBackButton) {
+        [self.viewmodel fullScreenButtonClickedHandlerForVodPlayController:self isFullScreen:fullButton.isSelected];
+    }
+    /// 将标志初始化
+    [self setIsClickBackButton:NO];
 }
+
 /**
  播放器时间滑条发生变化
  
@@ -108,7 +143,7 @@
 - (void)playSliderUpdateValue:(UISlider *)playSlider
 {
     /// 视频为直播视频不能拖拽
-    if (self.controlView.totalPlayTime > 0) {
+    if (self.controlView.totalPlayTime > 0 && self.player.isPlaying) {
         double seekPos = playSlider.value * self.player.duration;
         [self.player seekTo:seekPos accurate:YES];
     }
@@ -136,18 +171,28 @@
     return _controlView;
 }
 
+- (void)setInfoVM:(TDLiveInfoViewModel *)infoVM
+{
+    _infoVM = infoVM;
+    [self.controlView.livePeopleButton setTitle:_infoVM.onLinePeople forState:UIControlStateNormal];
+    [self.controlView.liveStateButton setSelected:!_infoVM.isLiving];
+}
+
 - (void)setViewmodel:(TDActivityInfoViewModel *)viewmodel
 {
     _viewmodel = viewmodel;
-    [self.controlView.backButton setTitle:[NSString stringWithFormat:@"< %@", _viewmodel.model.title] forState:UIControlStateNormal];
+    [self.controlView.titleLabel setText:_viewmodel.model.title];
 }
 
-- (void)setVideoViewmodel:(TDLiveVideoViewModel *)videoViewmodel
+- (void)setVideoVM:(TDLiveClipsViewModel *)videoVM
 {
-    _videoViewmodel = videoViewmodel;
-    if (_videoViewmodel.videoClips.count > 0) {
-        TDLiveClipsViewModel *viewmodel = _videoViewmodel.videoClips[0];
-        [self reload:[NSURL URLWithString:viewmodel.model.url]];
+    _videoVM = videoVM;
+    NSURL *url;
+    if (videoVM.model.url && (url = [NSURL URLWithString:videoVM.model.url])) {
+        [self reload:url];
+    }
+    else {
+        NSLog(@"--------------视频地址错位！！！");
     }
 }
 

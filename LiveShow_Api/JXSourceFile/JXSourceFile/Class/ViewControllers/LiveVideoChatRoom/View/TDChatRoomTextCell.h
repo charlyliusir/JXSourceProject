@@ -13,6 +13,4 @@
 
 @property (nonatomic, strong) TDLiveChatRoomChatListModel * model;
 
-- (void)setStyle;
-
 @end

@@ -17,5 +17,6 @@
 - (instancetype)initWithDelegate:(id <UICollectionViewDelegateFlowLayout>) delegate;
 
 - (void)setSourcess:(NSArray *)sources;
+- (void)reloadCollectionCellWithIndexPaths:(NSArray *)indexPaths;
 
 @end

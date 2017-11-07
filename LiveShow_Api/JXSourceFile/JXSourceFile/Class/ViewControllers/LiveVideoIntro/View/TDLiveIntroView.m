@@ -32,7 +32,8 @@
 {
     _viewmodel = viewmodel;
     [_introLabel setAttributedText:[_viewmodel summaryAttributedString]];
-    [_nameLabel setText:_viewmodel.model.name];}
+    [_nameLabel setText:_viewmodel.model.name];
+}
 
 - (void)setupUI
 {
@@ -53,7 +54,7 @@
     [_introLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.lineView);
         make.top.mas_equalTo(self.nameLabel.mas_bottom).mas_offset(15);
-        make.width.mas_equalTo(TD_SCREEN_WIDTH-68-15);
+        make.width.mas_equalTo(TD_SCREEN_WIDTH-20);
     }];
 }
 
@@ -91,7 +92,7 @@
         _introLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         [_introLabel setFont:TDFontSize(18)];
         [_introLabel setTextColor:TDHexStringColor(@"#707070")];
-        [_introLabel setLineBreakMode:NSLineBreakByWordWrapping];
+        [_introLabel setLineBreakMode:NSLineBreakByCharWrapping];
         [_introLabel setNumberOfLines:0];
     }
     return _introLabel;

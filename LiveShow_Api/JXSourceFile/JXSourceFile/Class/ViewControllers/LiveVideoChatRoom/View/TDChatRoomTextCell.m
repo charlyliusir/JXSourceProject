@@ -28,8 +28,12 @@
 @property (nonatomic, strong)UILabel *chatContentLabel;
 /// 二级内容容器视图
 @property (nonatomic, strong)UIImageView *nextLevelContentView;
+/// 二级内容用户名称
+@property (nonatomic, strong)UILabel *nextLevelUserNameLabel;
 /// 二级内容
 @property (nonatomic, strong)UILabel *nextLevelChatContentLabel;
+
+@property (nonatomic, strong)NSLayoutConstraint *chatContentBottomConstraint;
 
 @end
 
@@ -45,6 +49,7 @@
         [self.contentView addSubview:self.chatContentView];
         [self.chatContentView addSubview:self.chatContentLabel];
         [self.chatContentView addSubview:self.nextLevelContentView];
+        [self.nextLevelContentView addSubview:self.nextLevelUserNameLabel];
         [self.nextLevelContentView addSubview:self.nextLevelChatContentLabel];
         [self setupUI];
     }
@@ -88,35 +93,60 @@
         make.right.mas_lessThanOrEqualTo(self.contentView).mas_offset(-TD_ChatRoom_ChatContent_Max_Margin_X);
         make.right.mas_greaterThanOrEqualTo(_chatContentLabel).mas_offset(TD_ChatRoom_Margin_Y);
         make.right.mas_greaterThanOrEqualTo(_nextLevelContentView).mas_offset(TD_ChatRoom_Margin_Y);
-//        make.bottom.mas_equalTo(self.contentView);
-        make.bottom.mas_equalTo(_chatContentLabel).mas_offset(TD_ChatRoom_Margin_Y);
+        make.bottom.mas_equalTo(_nextLevelContentView).mas_offset(TD_ChatRoom_Margin_Y);
     }];
     
     [_chatContentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_offset(TD_ChatRoom_Margin_Y-TD_ChatRoom_ChatContent_Margin_X);
-        make.top.mas_offset(TD_ChatRoom_Margin_Y);
+        make.left.mas_equalTo(TD_ChatRoom_Margin_Y-TD_ChatRoom_ChatContent_Margin_X);
+        make.top.mas_equalTo(TD_ChatRoom_Margin_Y);
     }];
     
     [_nextLevelContentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_chatContentLabel);
         make.top.mas_equalTo(_chatContentLabel.mas_bottom).mas_offset(-TD_ChatRoom_ChatContent_Margin_X);
         make.right.mas_equalTo(_nextLevelChatContentLabel).mas_offset(-TD_ChatRoom_ChatContent_Margin_X);
-        make.bottom.mas_equalTo(_nextLevelChatContentLabel).mas_offset(-TD_ChatRoom_ChatContent_Margin_X);
+        make.bottom.mas_greaterThanOrEqualTo(_nextLevelChatContentLabel).mas_offset(-TD_ChatRoom_ChatContent_Margin_X);
+        make.bottom.mas_greaterThanOrEqualTo(_nextLevelUserNameLabel).mas_offset(-TD_ChatRoom_ChatContent_Margin_X);
+    }];
+    
+    [_nextLevelUserNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.mas_equalTo(-TD_ChatRoom_ChatContent_Margin_X);
     }];
 
     [_nextLevelChatContentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.mas_offset(-TD_ChatRoom_ChatContent_Margin_X);
+        make.top.mas_equalTo(_nextLevelUserNameLabel);
+        make.left.mas_equalTo(_nextLevelUserNameLabel.mas_right);
     }];
 }
 
-- (void)setStyle
+- (void)setModel:(TDLiveChatRoomChatListModel *)model
 {
-    [_avatarImageView sd_setImageWithURL:[NSURL URLWithString:_model.user_logo] placeholderImage:[UIImage imageNamed:@""]];
-    [_userNameLabel setText:_model.user_name];
-    [_chatTimeLabel setText:_model.date];
-    [_chatContentLabel setText:_model.msg_content];
+    _model = model;
     
-    [_nextLevelContentView setHidden:YES];
+    [_avatarImageView sd_setImageWithURL:[NSURL URLWithString:_model.user_logo] placeholderImage:[UIImage imageNamed:@""]];
+    [_chatTimeLabel setText:_model.date];
+    [_userNameLabel setText:[_model getUserNameWithChatMessage]];
+    [_chatContentLabel setText:[_model getMessageWithChatMessage]];
+    [_nextLevelUserNameLabel setText:[_model getReplyUserNameWithChatMessage]];
+    [_nextLevelChatContentLabel setText:[_model getReplyMessageWithChatMessage]];
+    
+    [_nextLevelContentView setHidden:![_model isReplyMessage]];
+    
+    
+    [_chatContentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_userNameLabel.mas_bottom).mas_offset(TD_ChatRoom_Margin_Y);
+        make.left.mas_equalTo(_userNameLabel).mas_offset(TD_ChatRoom_ChatContent_Margin_X);
+        make.right.mas_lessThanOrEqualTo(self.contentView).mas_offset(-TD_ChatRoom_ChatContent_Max_Margin_X);
+        make.right.mas_greaterThanOrEqualTo(_chatContentLabel).mas_offset(TD_ChatRoom_Margin_Y);
+        make.right.mas_greaterThanOrEqualTo(_nextLevelContentView).mas_offset(TD_ChatRoom_Margin_Y);
+        if ([_model isReplyMessage]) {
+            make.bottom.mas_equalTo(_nextLevelContentView).mas_offset(TD_ChatRoom_Margin_Y);
+        }
+        else  {
+            make.bottom.mas_equalTo(_nextLevelContentView.mas_top).mas_offset(TD_ChatRoom_Margin_Y);
+        }
+    }];
+    
 }
 
 - (UIImageView *)avatarImageView
@@ -180,10 +210,20 @@
 - (UIImageView *)nextLevelContentView
 {
     if (!_nextLevelContentView) {
-        _nextLevelContentView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
-        [_nextLevelContentView setBackgroundColor:TDHexStringColor(@"#ffffff")];
+        _nextLevelContentView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"td_chat_reply_bubble"] stretchableImageWithLeftCapWidth:2 topCapHeight:2]];
     }
     return _nextLevelContentView;
+}
+
+- (UILabel *)nextLevelUserNameLabel
+{
+    if (!_nextLevelUserNameLabel) {
+        _nextLevelUserNameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        [_nextLevelUserNameLabel setText:@""];
+        [_nextLevelUserNameLabel setTextColor:TDHexStringColor(@"#1b9ed4")];
+        [_nextLevelUserNameLabel setFont:TDFontSize(11)];
+    }
+    return _nextLevelUserNameLabel;
 }
 
 - (UILabel *)nextLevelChatContentLabel

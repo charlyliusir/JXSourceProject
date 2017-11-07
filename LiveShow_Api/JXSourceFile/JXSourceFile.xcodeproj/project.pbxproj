@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1292057E1517D0F53A6AC924 /* Pods_JXSourceFile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB8F492D087A848A6A8717CD /* Pods_JXSourceFile.framework */; };
+		54051D2B1FB18927008B0674 /* UpdateVolumeAndBrightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54051D291FB18927008B0674 /* UpdateVolumeAndBrightView.m */; };
 		540DE0371F99C4D3009F2498 /* TDLiveInfoResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 540DE0341F99C480009F2498 /* TDLiveInfoResponse.m */; };
 		540DE03A1F99CE01009F2498 /* TDLiveInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 540DE0391F99CE01009F2498 /* TDLiveInfoViewModel.m */; };
 		540DE03D1F99CE0E009F2498 /* TDLiveInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 540DE03C1F99CE0E009F2498 /* TDLiveInfoModel.m */; };
@@ -100,6 +101,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		54051D281FB16874008B0674 /* CLTapBarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLTapBarDelegate.h; sourceTree = "<group>"; };
+		54051D291FB18927008B0674 /* UpdateVolumeAndBrightView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpdateVolumeAndBrightView.m; sourceTree = "<group>"; };
+		54051D2A1FB18927008B0674 /* UpdateVolumeAndBrightView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpdateVolumeAndBrightView.h; sourceTree = "<group>"; };
 		540DE0331F99C480009F2498 /* TDLiveInfoResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDLiveInfoResponse.h; sourceTree = "<group>"; };
 		540DE0341F99C480009F2498 /* TDLiveInfoResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDLiveInfoResponse.m; sourceTree = "<group>"; };
 		540DE0381F99CE01009F2498 /* TDLiveInfoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDLiveInfoViewModel.h; sourceTree = "<group>"; };
@@ -549,6 +553,8 @@
 				54CC05B71FA17739003CE2D9 /* TDPlayerSetting.m */,
 				54CC05B81FA17739003CE2D9 /* TDPlayerViewModel.h */,
 				54CC05B91FA17739003CE2D9 /* TDPlayerViewModel.m */,
+				54051D2A1FB18927008B0674 /* UpdateVolumeAndBrightView.h */,
+				54051D291FB18927008B0674 /* UpdateVolumeAndBrightView.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -855,6 +861,7 @@
 			children = (
 				54F72AC41F98510200D8BE68 /* CLTapViewControllerProtocol.h */,
 				54BDCD3D1F98B733000C0C28 /* CLTapBarViewDelegate.h */,
+				54051D281FB16874008B0674 /* CLTapBarDelegate.h */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1098,6 +1105,7 @@
 				540DE03A1F99CE01009F2498 /* TDLiveInfoViewModel.m in Sources */,
 				540DE0371F99C4D3009F2498 /* TDLiveInfoResponse.m in Sources */,
 				7C1821451F9B37F90053DF40 /* TDActivityInfoViewModel.m in Sources */,
+				54051D2B1FB18927008B0674 /* UpdateVolumeAndBrightView.m in Sources */,
 				54D74B311F9F2846000DB4C4 /* UITextView+TDInputView.m in Sources */,
 				541B7C811FA33D8400B486B4 /* TDHelperManager.m in Sources */,
 				541B7C7D1FA32C8E00B486B4 /* TDLiveClipView.m in Sources */,
@@ -1335,7 +1343,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = JXSourceFile/Support/TDJXSourceFile.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/JXSourceFile/Support/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CL.JXSourceFile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1355,7 +1363,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = JXSourceFile/Support/TDJXSourceFile.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/JXSourceFile/Support/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CL.JXSourceFile;
 				PRODUCT_NAME = "$(TARGET_NAME)";

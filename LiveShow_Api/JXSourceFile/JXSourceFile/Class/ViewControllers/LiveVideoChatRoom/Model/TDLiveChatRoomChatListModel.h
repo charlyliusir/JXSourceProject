@@ -25,6 +25,12 @@
 @property (nonatomic,   copy) NSString *time;
 // 评论内容 eg:22222
 @property (nonatomic,   copy) NSString *msg_content;
+// 原消息  eg:22222
+@property (nonatomic,   copy) NSString *reply_msg;
+// 原消息的用户名称 eg:22222
+@property (nonatomic,   copy) NSString *reply_user_name;
+// 是否二级回复，1是，0不是 eg:0
+@property (nonatomic, strong) NSNumber *is_reply;
 // 是否打赏，1打赏，0未打赏 eg:0
 @property (nonatomic, strong) NSNumber *is_reward;
 // 是否中奖，1中奖，0未中奖 eg:0
@@ -33,5 +39,13 @@
 @property (nonatomic, strong) NSNumber *type;
 
 - (CGFloat)chatCellHeight;
+
+- (BOOL)isReplyMessage;
+
+- (NSString *)getUserNameWithChatMessage;
+- (NSString *)getMessageWithChatMessage;
+
+- (NSString *)getReplyUserNameWithChatMessage;
+- (NSString *)getReplyMessageWithChatMessage;
 
 @end

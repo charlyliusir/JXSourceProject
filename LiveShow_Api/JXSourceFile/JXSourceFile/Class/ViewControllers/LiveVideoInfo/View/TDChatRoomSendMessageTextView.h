@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TDBaseTextView.h"
+#import "TDLiveChatRoomChatListModel.h"
 @protocol TCContainerTextViewDelegate;
 
 typedef NS_ENUM(NSUInteger, TDSendMessageLevel) {
@@ -31,6 +32,11 @@ typedef NS_ENUM(NSUInteger, TDSendMessageLevel) {
  是否允许聊天
  */
 @property (nonatomic, assign)TDSendMessageLevel *sendLeve;
+
+/**
+ 用以二级回复的聊天消息
+ */
+@property (nonatomic, strong)TDLiveChatRoomChatListModel *chatModel;
 
 @end
 

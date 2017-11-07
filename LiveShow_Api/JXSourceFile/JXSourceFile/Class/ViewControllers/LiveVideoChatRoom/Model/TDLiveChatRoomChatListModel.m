@@ -25,26 +25,97 @@
 
 - (CGFloat)contentHeight
 {
-    if (!self.msg_content || [self.msg_content isEqualToString:@""]) {
+    NSString *message = [self getMessageWithChatMessage];
+    if ([message isEqualToString:@""]) {
         return 34;
     }
     
-    return [NSString stringGetHegith:self.msg_content WithWidth:TDChatContentWidth attributes:@{NSFontAttributeName: TDFontSize(15)}] + 20;
+    return [NSString stringGetHegith:message WithWidth:TDChatContentWidth attributes:@{NSFontAttributeName: TDFontSize(15)}] + 20;
 }
 
-///// 二级文字高度
-//- (CGFloat)nextContentHeight
-//{
-//    if (!self.msg_content || [self.msg_content isEqualToString:@""]) {
-//        return 34;
-//    }
-//
-//    return [NSString stringGetHegith:self.msg_content WithWidth:TDChatContentWidth attributes:@{NSFontAttributeName: TDFontSize(15)}] + 20;
-//}
+/// 二级文字高度
+- (CGFloat)nextContentHeight
+{
+    if (![self isReplyMessage]) {
+        return 0;
+    }
+    
+    NSString *message = [self getReplyMessageWithChatMessage];
+    if ([message isEqualToString:@""]) {
+        return 34;
+    }
+
+    return [NSString stringGetHegith:message WithWidth:TDChatContentWidth attributes:@{NSFontAttributeName: TDFontSize(15)}] + 20;
+}
 
 - (CGFloat)chatCellHeight
 {
-    return TDChatNormalHeight + [self contentHeight];
+    return TDChatNormalHeight + [self contentHeight] + [self nextContentHeight];
+}
+
+- (BOOL)isReplyMessage
+{
+    BOOL isReply = NO;
+    if (self.is_reply) {
+        return (isReply = [self.is_reply boolValue]);
+    }
+    return isReply;
+}
+
+- (NSString *)getUserNameWithChatMessage
+{
+    NSString *userName = @"";
+    if ([self isReplyMessage]) {
+        return (userName = self.reply_user_name ? self.reply_user_name : @"");
+    }
+    else if (![self isReplyMessage]) {
+        return (userName = self.user_name ? self.user_name : @"");
+    }
+    else {
+        return userName;
+    }
+}
+
+- (NSString *)getMessageWithChatMessage
+{
+    NSString *message = @"";
+    if ([self isReplyMessage]) {
+        return (message = self.reply_msg ? self.reply_msg : @"");
+    }
+    else if (![self isReplyMessage]) {
+        return (message = self.msg_content ? self.msg_content : @"");
+    }
+    else {
+        return message;
+    }
+}
+
+- (NSString *)getReplyUserNameWithChatMessage
+{
+    NSString *reply_userName = @"";
+    if (![self isReplyMessage]) {
+        return (reply_userName = self.reply_user_name ? self.reply_user_name : @"");
+    }
+    else if ([self isReplyMessage]) {
+        return (reply_userName = self.user_name ? self.user_name : @"");
+    }
+    else {
+        return reply_userName;
+    }
+}
+
+- (NSString *)getReplyMessageWithChatMessage
+{
+    NSString *reply_msg = @"";
+    if (![self isReplyMessage]) {
+        return (reply_msg = self.reply_msg ? self.reply_msg : @"");
+    }
+    else if ([self isReplyMessage]) {
+        return (reply_msg = self.msg_content ? self.msg_content : @"");
+    }
+    else {
+        return reply_msg;
+    }
 }
 
 @end

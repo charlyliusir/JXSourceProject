@@ -103,10 +103,15 @@
  */
 - (void)sendMessage:(UIButton *)button
 {
-    NSString *text = _sendMessageTextview.textView.text;
+    NSString *text = self.sendMessageTextview.textView.text;
     if (![text isEqualToString:@""]) {
+        NSNumber *parent = nil;
+        TDLiveChatRoomChatListModel *chatModel;
+        if ((chatModel = self.sendMessageTextview.chatModel)) {
+            parent = chatModel.user_id;
+        }
         /// 发送评论
-        TDSendMessageRequest *req = [TDSendMessageRequest sendMessageWithSourceId:_sourceId sendType:_type message:_sendMessageTextview.textView.text parent:nil];
+        TDSendMessageRequest *req = [TDSendMessageRequest sendMessageWithSourceId:_sourceId sendType:_type message:_sendMessageTextview.textView.text parent:parent];
         [[[TDCommonClient alloc] init] sendReq:req onSuccess:^(TDHttpStatusCode statusCode, id<TDHttpResponseType> response, NSString *message, id json) {
             if (statusCode == TDHttpStatusSuccess) {
                 [self sendNewChatMessage];
@@ -226,6 +231,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (self.sendMessageTextview) {
+        TDLiveChatRoomChatListModel *chatModel;
+        if (indexPath.section == 0) {
+            chatModel = _viewmodel.topListModels[indexPath.row];
+        }
+        else if (indexPath.section == 1) {
+            chatModel = _viewmodel.listModels[indexPath.row];
+        }
+        self.sendMessageTextview.chatModel = chatModel;
+        
+        /// 准备输入
+        if (_draggingTarget && _draggingAction && [[_draggingTarget class] instancesRespondToSelector:NSSelectorFromString(@"onClickChatItemAction:")]) {
+            [_draggingTarget performSelector:NSSelectorFromString(@"onClickChatItemAction:") withObject:self.chatItemView];
+        }
+        
+    }
 }
 
 #pragma mark - table datasource
@@ -255,7 +276,6 @@
     else {
         cell.model = _viewmodel.listModels[indexPath.row];
     }
-    [cell setStyle];
     return cell;
 }
 

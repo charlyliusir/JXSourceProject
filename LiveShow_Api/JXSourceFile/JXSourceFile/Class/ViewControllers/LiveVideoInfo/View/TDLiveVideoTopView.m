@@ -67,7 +67,7 @@
     if (!_bgImageView)
     {
         _bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
-        [_bgImageView setBackgroundColor:TDHexStringColor(@"#ff00ff")];
+        [_bgImageView setBackgroundColor:TDHexStringColor(@"#000000")];
         [_bgImageView setContentMode:UIViewContentModeScaleAspectFill];
         [_bgImageView setUserInteractionEnabled:YES];
     }
@@ -78,8 +78,8 @@
 {
     if (!_playButton) {
         _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_playButton setTitle:@"播放" forState:UIControlStateNormal];
-        [_playButton setTitleColor:TDHexStringColor(@"#ffffff") forState:UIControlStateNormal];
+        [_playButton setImage:[UIImage imageNamed:@"td_play_icon"] forState:UIControlStateNormal];
+        [_playButton setImage:[UIImage imageNamed:@"td_play_icon"] forState:UIControlStateSelected];
     }
     return _playButton;
 }
@@ -133,6 +133,18 @@
 {
     _activityViewmodel = activityViewmodel;
     [_titleLabel setText:_activityViewmodel.model.title];
+}
+
+- (void)setModel:(TDLiveClipsViewModel *)model
+{
+    _model = model;
+    NSURL *url;
+    if (model.model.photo && (url = [NSURL URLWithString:model.model.photo])) {
+        [_bgImageView sd_setImageWithURL:url];
+    }
+    else {
+        NSLog(@"片段封面图片不存在哦！！！");
+    }
 }
 
 @end

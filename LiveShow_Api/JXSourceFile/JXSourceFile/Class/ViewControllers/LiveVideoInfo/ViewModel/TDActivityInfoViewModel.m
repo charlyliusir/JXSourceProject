@@ -110,10 +110,10 @@
     
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setValue:TDFontSize(16) forKey:NSFontAttributeName];
-    [dict setValue:@(2) forKey:NSKernAttributeName];
+    [dict setValue:@(1) forKey:NSKernAttributeName];
     [dict setValue:paragraphStyle forKey:NSParagraphStyleAttributeName];
     
-    return [[NSAttributedString alloc] initWithString:@"10月25日，记者获悉，麦当劳(中国)有限公司已于2017年10月12日正式更名为金拱门(中国)有限公司。此前8月24日，投资者名称也由麦当劳中国管理有限公司变更为金拱门中国管理有限公司。目前，麦当劳各地分公司也在陆续更名。" attributes:dict];
+    return [[NSAttributedString alloc] initWithString:self.model.summary attributes:dict];
 }
 
 

@@ -7,6 +7,7 @@
 //
 
 #import "TDLiveChatRoomViewModel.h"
+#import "TDLiveChatRoomChatListModel.h"
 #import "TDGetChatListRequest.h"
 
 @interface TDLiveChatRoomViewModel()

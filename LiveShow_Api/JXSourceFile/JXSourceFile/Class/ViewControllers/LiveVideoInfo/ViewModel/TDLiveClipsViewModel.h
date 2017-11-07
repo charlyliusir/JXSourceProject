@@ -12,6 +12,7 @@
 @interface TDLiveClipsViewModel : NSObject
 
 @property (nonatomic, readonly, strong) TDLiveClipsModel *model;
+@property (nonatomic, assign) BOOL isSelected;
 
 - (instancetype)initWithModel:(TDLiveClipsModel *)model;
 + (instancetype)liveClipsWithModel:(TDLiveClipsModel *)model;
